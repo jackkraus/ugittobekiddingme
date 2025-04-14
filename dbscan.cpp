@@ -3,6 +3,9 @@
 //#include <math.h>
 
 
+// pseudocode from: https://en.wikipedia.org/wiki/DBSCAN
+// just an idea :)
+
 //TODO: Is this a useful algorithm to implement with HLS?
 //	Or are we going to have to come up with something more bespoke? 
 
