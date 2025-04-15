@@ -10,7 +10,8 @@ Link to Google Doc: https://docs.google.com/document/d/1q1EikOs6kiQYQT4Z4tsuDTbY
 	- 
 - Using that grid (arrays or vectors), we can start making a clustering algorithm
   	- I: Grid of (array) points
-  	- O: something clustered set of points
+  	- O: something clustered set of points (CSV)
+
 - Visualize it with matplotlib or some other tool 
 	- I: clustered points
    	- O: plots/pdf

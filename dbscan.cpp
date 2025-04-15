@@ -1,7 +1,7 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <math.h>
-
+//#include "generate_points.h"
 
 // pseudocode from: https://en.wikipedia.org/wiki/DBSCAN
 // just an idea :)
@@ -61,7 +61,7 @@ void dbscan(point_db, distFunc, eps, minPts) {
 int main() {
 	// Read in Points		
 	// genPoints();	// generate points (call func)
-			
+        			
 	// Call DBSCAN 
 	// dbscan(params); // input points into dbscan func	
 	
