@@ -5,7 +5,7 @@ const int nrow = 10;
 const int ncol = 10;
 
 // biggest hit number for a cluster
-const int nhitmax = 5;
+const int nhitmax = 6;
 
 // generating sample grids with cluster(s) manually //
 
