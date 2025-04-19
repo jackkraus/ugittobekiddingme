@@ -3,12 +3,15 @@
 // decided grid number and size
 const int nrow = 10;
 const int ncol = 10;
+// const int nrow = 100;
+// const int ncol = 100;
 
 // biggest hit number for a cluster
-const int nhitmax = 6;
+const int nhitmax = 9;
 
 // max number of clusters in grid
-const int nclustmax = 6;
+const int nclustmax = 9;
+// const int nclustmax = 50;
 
 // generating sample grids with cluster(s) manually //
 
@@ -53,6 +56,7 @@ int manual_grid[ngrids][nrow][ncol] = {0};
 // manual_grid[3][8][5] = 8;
 // manual_grid[3][7][4] = 4;
 
+// inserting cluster into grid
 void insert_cluster(int g[nrow][ncol]){
     // picking a random point on the grid for inital point of cluster and placing it on the grid
     int x = rand() % nrow;
@@ -119,6 +123,85 @@ void insert_cluster(int g[nrow][ncol]){
             int x_h=x+1;
             int y_h=y+1;
             g[x_h][y_h]=1;
+        }
+    }
+}
+
+// overlap check
+void overlap_check(int f, int g[nrow][ncol], int tg[nrow][ncol]){
+    for(unsigned int i=0; i<nrow; i++){
+        for(unsigned int j=0; j<ncol; j++){
+
+            // checking if hit overlaps
+            if(tg[i][j]!=1){continue;}
+            if(g[i][j]==tg[i][j]){f=1;}
+
+            // checking if adjacent there are adjacent hits to cluster in temp grid
+            for(unsigned int b=0;b<8;b++){
+
+                // skipping boundary cases
+                if((i==0)&&((b==0)||(b==1)||(b==2))){continue;}
+                if((i==nrow-1)&&((b==5)||(b==6)||(b==7))){continue;}
+                if((j==0)&&((b==0)||(b==3)||(b==5))){continue;}
+                if((j==ncol-1)&&((b==2)||(b==4)||(b==7))){continue;}
+
+                if(b==0){
+                    int c0=i-1;
+                    int c1=j-1;
+                    if(g[c0][c1]==1){f=1;}
+                }
+                if(b==1){
+                    int c0=i-1;
+                    if(g[c0][j]==1){f=1;}
+                }
+                if(b==2){
+                    int c0=i-1;
+                    int c1=j+1;
+                    if(g[c0][c1]==1){f=1;}
+                }
+                if(b==3){
+                    int c1=j-1;
+                    if(g[i][c1]==1){f=1;}
+                }
+                if(b==4){
+                    int c1=j+1;
+                    if(g[i][c1]==1){f=1;}
+                }
+                if(b==5){
+                    int c0=i+1;
+                    int c1=j-1;
+                    if(g[c0][c1]==1){f=1;}
+                }
+                if(b==6){
+                    int c0=i+1;
+                    if(g[c0][j]==1){f=1;}
+                }
+                if(b==7){
+                    int c0=i+1;
+                    int c1=j+1;
+                    if(g[c0][c1]==1){f=1;}
+                }
+            }
+        }
+    }
+
+    // printing the temporary grid
+    if(f==1){cout<<"the following cluster grid has overlap with the current grid"<<endl;}
+    cout<<"cluster grid"<<endl;
+    for(unsigned int i=0; i<nrow; i++){
+        for(unsigned int j=0; j<ncol; j++){
+            cout<<tg[i][j];
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+
+    // mapping the separate grid and cluster to the original grid if there's no overlap between the two
+    if(f==0){
+        for(unsigned int i=0; i<nrow; i++){
+            for(unsigned int j=0; j<ncol; j++){
+                if(tg[i][j]==1){g[i][j]=1;}
+            }
         }
     }
 }
