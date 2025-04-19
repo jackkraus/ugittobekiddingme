@@ -1,7 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// allows compiler to know array size 
+// allows compiler to know array size
+//
+// TODO: HLS has fixed width floating-point types
+// 		definitely need that for the centroid calculations
+ 
 template<size_t Rows, size_t Cols>
 
 /* sw_findMaxSum Parameters: 
@@ -134,10 +138,11 @@ int main() {
         // for every subwindow we can identify a possible cluster if a window sum is not zero
         // if that window is above a threshold and then send it to calculate the centroid
         // 		then you can take the average of all the points in the cluster
+	// 		(TODO: make sure diagonal hits are accounted for!!!!)
       
-        // Assign final cluster IDs to points
-        // assignToClusters(points, clusters);
-        
+	// TODO: Centroid calculations!
+	
+
         // Write output files
         // writeClusterPointsCSV(points, "cluster_points.csv");
         // writeClusterCentroidsCSV(clusters, "cluster_centroids.csv");
