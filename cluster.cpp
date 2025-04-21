@@ -5,7 +5,14 @@ using namespace std;
 
 // TODO: HLS has fixed width floating-point types
 // 		definitely need that for the centroid calculations
- 
+
+struct CentroidPoint{
+	float x;
+	float y;
+	int clusterID; 
+};
+
+
 struct ClusterPoint {
 	int x;
 	int y;
@@ -19,14 +26,39 @@ struct ClusterPoint {
 	}
 };
 
+vector<CentroidPoint> calcCentroid(vector<vector<ClusterPoint>> clusters) {
+	// calc centroid	
+	vector<CentroidPoint> centroids;
+	CentroidPoint c;
+	float sumx = 0.f;
+	float sumy = 0.f;	
+	int tempClusterID= 0;
+	int hit_count = 0;
+
+	for(const auto& cluster : clusters) {
+		for(const ClusterPoint& p: cluster) {
+	cout << "calcCentroid:    cluster_" << p.clusterID << ": (" << p.x<< ","<<p.y<<") "<<endl;
+			sumx += (float)(p.x);
+			sumy += (float)(p.y);	
+			tempClusterID=p.clusterID;
+			hit_count++;
+		}
+		// calculate the centroid	
+		c.x = sumx/hit_count;
+		c.y = sumy/hit_count;
+		c.clusterID = tempClusterID;
+		centroids.push_back(c); // add it to the vector of centroids
+		// cout << "calcCentroid:    cent_cluster_" <<c.clusterID << ": (" << c.x<< ","<<c.y<<") "<<endl;
+		// reset the vars for the next cluster
+		sumx=0.f;
+		sumy=0.f;
+		hit_count=0;
+	}	
+	return centroids;
+}
 
 // allows compiler to know array size
 template<size_t Rows, size_t Cols>
-
-// pair<double, double> calcCentroid() {
-// 	// calc centroid	
-// }
-
 /* naive_findClusters Parameters: 
  * 	&arr - reference to 2D array, not decayed to pointer (loses size info)
  * 	k->length of submatrices (for 10x10, make it 5)
@@ -50,7 +82,7 @@ vector<vector<ClusterPoint>> naive_findClusters(int (&arr)[Rows][Cols], int k) {
 			if(arr[i][j] == 1 && !visited[i][j]) { 
 				vector<ClusterPoint> cluster; // est a cluster of points
 				// queue will be needed in case of several points not in 
-				// 	direct adjacency to the first point
+				// 	direct adjaceny to the first point
 				queue<ClusterPoint> q; 
 				clusterID++;	
 				
@@ -85,8 +117,9 @@ vector<vector<ClusterPoint>> naive_findClusters(int (&arr)[Rows][Cols], int k) {
 				// by this point, all cp's in q should be popped, 
 				// which means we're at the end of our cluster?
 				cluster_pts.push_back(cluster);
-			}				} 
+			}
 		}
+	}
 	return cluster_pts;
 } 
 
@@ -96,7 +129,7 @@ template<size_t Rows, size_t Cols>
  * 	k->length of submatrices (for 10x10, make it 5)
  */
 vector<vector<ClusterPoint>> sw_findClusters(int (&arr)[Rows][Cols], int k) { 
-	int clusterID_start = -1;
+	int clusterID_start = 0;
 	vector<vector<ClusterPoint>> cluster_pts;
 
 	// array of the 8-adjacent spaces for each direction
@@ -191,7 +224,7 @@ vector<vector<ClusterPoint>> sw_findClusters(int (&arr)[Rows][Cols], int k) {
 
 int main() {
 
-	vector<vector<ClusterPoint>> naive_clusters = naive_findClusters(sample_arr, k);
+	vector<vector<ClusterPoint>> clusters = naive_findClusters(sample_arr, k);
 	// vector<vector<ClusterPoint>> clusters = sw_findClusters(sample_arr, k);
 
         // for every subwindow we can identify a possible cluster if a window sum is not zero
@@ -200,17 +233,26 @@ int main() {
       
 	
 	// print clusters
-	for(const auto& cluster : naive_clusters) {
-		cout << "cluster_";
+	for(const auto& cluster : clusters) {
+		cout << "main:    cluster_";
 		for(const ClusterPoint& p: cluster) {
 			cout << p.clusterID << ": (" << p.x<< ","<<p.y<<") ";
 		}
 		cout << endl;
 	}	
 
+	// calculate centroids
+	vector<CentroidPoint> centroids = calcCentroid(clusters); 
+		
+	// print clusters
+	for(const auto& c : centroids) {
+		cout << "main:    centroid_" << c.clusterID << ": (" << c.x<< ","<<c.y<<") "<< endl;
+	}	
+
+
         // Write output files
-        // writeClusterPointsCSV(points, "cluster_points.csv");
-        // writeClusterCentroidsCSV(clusters, "cluster_centroids.csv");
+        // writeClusterPointsCSV(clusters, "cluster_points.csv");
+        // writeClusterCentroidsCSV(centroids, "cluster_centroids.csv");
         
         std::cout << "Clustering completed. Results written\n";
         
