@@ -37,7 +37,7 @@ vector<CentroidPoint> calcCentroid(vector<vector<ClusterPoint>> clusters) {
 
 	for(const auto& cluster : clusters) {
 		for(const ClusterPoint& p: cluster) {
-	cout << "calcCentroid:    cluster_" << p.clusterID << ": (" << p.x<< ","<<p.y<<") "<<endl;
+		// cout << "calcCentroid:    cluster_" << p.clusterID << ": (" << p.x<< ","<<p.y<<") "<<endl;
 			sumx += (float)(p.x);
 			sumy += (float)(p.y);	
 			tempClusterID=p.clusterID;
@@ -94,7 +94,7 @@ vector<vector<ClusterPoint>> naive_findClusters(int (&arr)[Rows][Cols], int k) {
 				// loop through the queue and pop when done
 				while(!q.empty()){
 					ClusterPoint hit = q.front(); // grab off top	
-					cout << "cluster #" <<hit.clusterID << " ("<< hit.x<< ", " << hit.y<< ")" << endl;
+					// cout << "cluster #" <<hit.clusterID << " ("<< hit.x<< ", " << hit.y<< ")" << endl;
 					q.pop();
 					cluster.push_back(hit); // add hit to cluster
 					
@@ -226,11 +226,6 @@ int main() {
 
 	vector<vector<ClusterPoint>> clusters = naive_findClusters(sample_arr, k);
 	// vector<vector<ClusterPoint>> clusters = sw_findClusters(sample_arr, k);
-
-        // for every subwindow we can identify a possible cluster if a window sum is not zero
-        // if that window is above a threshold and then send it to calculate the centroid
-        // 		then you can take the average of all the points in the cluster
-      
 	
 	// print clusters
 	for(const auto& cluster : clusters) {
