@@ -1,3 +1,6 @@
+#include <iostream>
+
+using namespace std;
 // defining parameters of grid and cluster sizes //
 
 // decided grid number and size
@@ -16,7 +19,9 @@ const int nclustmax = 9;
 // making new grid
 int grid[nrow][ncol] = {0};
 
-// inserting cluster into grid
+void generate();
+
+// inserting cluster into grid int g[nrow][ncol]
 void insert_cluster(int g[nrow][ncol]){
     // picking a random point on the grid for inital point of cluster and placing it on the grid
     int x = rand() % nrow;
@@ -165,3 +170,4 @@ void overlap_check(int f, int g[nrow][ncol], int tg[nrow][ncol]){
         }
     }
 }
+

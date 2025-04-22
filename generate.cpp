@@ -1,11 +1,11 @@
-#include "Cluster_Generation1.h"
+#include "generate.h"
 
-void Cluster_Generation(){
+void generate(){
 
     // generating a grid with one randomly placed cluster //
 
     // making new grid
-    int grid[nrow][ncol] = {0};
+    //int grid[nrow][ncol] = {0};
 
     // // printing the grid to make sure it's empty
     // cout<<"empty grid"<<endl;
@@ -73,6 +73,6 @@ void Cluster_Generation(){
 }
 
 int main(){
-    Cluster_Generation();
+    generate();
     return 0;
 }

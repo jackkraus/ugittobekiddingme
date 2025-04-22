@@ -1,18 +1,14 @@
-#include <iostream>
-#include <fstream>
-#include <queue>
 #include "cluster.h"
+#include "generate.h"
+
 using namespace std;
 
-// TODO: HLS has fixed width floating-point types
-// 		definitely need that for the centroid calculations
 
 struct CentroidPoint{
 	float x;
 	float y;
 	int clusterID; 
 };
-
 
 struct ClusterPoint {
 	int x;
@@ -23,9 +19,11 @@ struct ClusterPoint {
 		this->x = x;
 		this->y = y;
 		this->clusterID = clusterID;
-		
 	}
 };
+
+// TODO: HLS has fixed width floating-point types
+// 		definitely need that for the centroid calculations
 
 vector<CentroidPoint> calcCentroid(vector<vector<ClusterPoint>> clusters) {
 	// calc centroid	
@@ -224,10 +222,16 @@ void writeClusterCentroidsCSV(const std::vector<CentroidPoint>& cents, const std
     	}
     	outfile.close();
 }
+void cluster() {
+	for(int i = 0; i < arr_size; i++) {
+		for(int j = 0; j < arr_size; j++) {
+			cout << grid[i][j] << ", "; 	
+		}
+		cout << endl;
+	}
 
-int main() {
-
-	vector<vector<ClusterPoint>> clusters = naive_findClusters(sample_arr, k);
+	vector<vector<ClusterPoint>> clusters = naive_findClusters(grid, k);
+	//vector<vector<ClusterPoint>> clusters = naive_findClusters(sample_arr, k);
 	// vector<vector<ClusterPoint>> clusters = sw_findClusters(sample_arr, k);
 	
 	// print clusters
@@ -254,5 +258,5 @@ int main() {
         
         std::cout << "Clustering completed. Results written\n";
         
-        return 0;
+
 }
