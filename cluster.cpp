@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <queue>
 #include "cluster.h"
 using namespace std;
@@ -194,33 +195,35 @@ vector<vector<ClusterPoint>> sw_findClusters(int (&arr)[Rows][Cols], int k) {
 
 
 
-//void writeClusterPointsCSV(const std::vector<Point>& points, const std::string& filename) {
-//	std::ofstream outfile(filename);
-//    	if (!outfile) {
-//    	    std::cerr << "Error opening file: " << filename << std::endl;
-//    	    return;
-//    	}
-//    	
-//    	outfile << "cluster_id,x,y\n";
-//    	for (const auto& point : points) {
-//    	    outfile << point.cluster_id << "," << point.x << "," << point.y << "\n";
-//    	}
-//    	outfile.close();
-//}
-//
-//void writeClusterCentroidsCSV(const std::vector<Cluster>& clusters, const std::string& filename) {
-//	std::ofstream outfile(filename);
-//    	if (!outfile) {
-//    	    std::cerr << "Error opening file: " << filename << std::endl;
-//    	    return;
-//    	}
-//    	
-//    	outfile << "cluster_id,centroid_x,centroid_y\n";
-//    	for (const auto& cluster : clusters) {
-//    	    outfile << cluster.id << "," << cluster.centroid_x << "," << cluster.centroid_y << "\n";
-//    	}
-//    	outfile.close();
-//}
+void writeClusterPointsCSV(const std::vector<vector<ClusterPoint>>& clusters, const std::string& filename) {
+	std::ofstream outfile(filename);
+    	if (!outfile) {
+    		std::cerr << "Error opening file: " << filename << std::endl;
+    		return;
+    	}
+    	
+    	outfile << "cluster_id,x,y\n";
+    	for (const auto& cluster : clusters) {
+    		for(const ClusterPoint& p: cluster) {
+			outfile << p.clusterID << "," << p.x << "," << p.y << "\n";
+		}
+	}
+    	outfile.close();
+}
+
+void writeClusterCentroidsCSV(const std::vector<CentroidPoint>& cents, const std::string& filename) {
+	std::ofstream outfile(filename);
+    	if (!outfile) {
+    	    	std::cerr << "Error opening file: " << filename << std::endl;
+    	    	return;
+    	}
+    	
+    	outfile << "cluster_id,centroid_x,centroid_y\n";
+    	for (const auto& c : cents) {
+    	    	outfile << c.clusterID << "," << c.x << "," << c.y << "\n";
+    	}
+    	outfile.close();
+}
 
 int main() {
 
@@ -246,8 +249,8 @@ int main() {
 
 
         // Write output files
-        // writeClusterPointsCSV(clusters, "cluster_points.csv");
-        // writeClusterCentroidsCSV(centroids, "cluster_centroids.csv");
+        writeClusterPointsCSV(clusters, "cluster_points.csv");
+        writeClusterCentroidsCSV(centroids, "cluster_centroids.csv");
         
         std::cout << "Clustering completed. Results written\n";
         
