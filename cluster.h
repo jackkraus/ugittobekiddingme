@@ -1,6 +1,10 @@
+#include <iostream>
+#include <fstream>
+#include <queue>
+
 const int arr_size = 10;
 const int k = 5;
-
+	
 int sample_arr[arr_size][arr_size] = {
        {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
        {1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
@@ -13,3 +17,7 @@ int sample_arr[arr_size][arr_size] = {
        {0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 };
+
+
+void cluster();
+

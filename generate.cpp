@@ -1,25 +1,8 @@
-#include "Cluster_Generation1.h"
+#include "generate.h"
 
-void Cluster_Generation(){
+void generate(){
 
     // generating a grid with one randomly placed cluster //
-
-    // making new grid
-    int grid[nrow][ncol] = {0};
-
-    // // printing the grid to make sure it's empty
-    // cout<<"empty grid"<<endl;
-    // for(unsigned int i=0; i<nrow; i++){
-    //     for(unsigned int j=0; j<ncol; j++){
-    //         cout<<grid[i][j];
-    //     }
-    //     cout<<endl;
-    // }
-    // cout<<endl;
-
-    // // printing the location of the random hit for the first cluster
-    // cout<<endl<<cx<<", "<<cy<<endl<<endl;
-
     insert_cluster(grid);
 
     // printing the grid after the first cluster
@@ -73,6 +56,6 @@ void Cluster_Generation(){
 }
 
 int main(){
-    Cluster_Generation();
+    generate();
     return 0;
 }
