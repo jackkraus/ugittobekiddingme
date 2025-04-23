@@ -1,173 +1,217 @@
 #include <iostream>
+#include <vector>
 
-using namespace std;
-// defining parameters of grid and cluster sizes //
+void printGrid(const std::vector<std::vector<int>>& grid) {
+    for (size_t i = 0; i < grid.size(); i++) {
+        for (size_t j = 0; j < grid[0].size(); j++) {
+            std::cout << grid[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}
 
-// decided grid number and size
-const int nrow = 10;
-const int ncol = 10;
-// const int nrow = 100;
-// const int ncol = 100;
+// Inserting cluster into grid int g[nrow][ncol]
+void insert_cluster(std::vector<std::vector<int>>& g, const int nhitmax, const bool debug=false) {
+    int nrow = g.size();
+    int ncol = g[0].size();
 
-// biggest hit number for a cluster
-const int nhitmax = 9;
-
-// max number of clusters in grid
-const int nclustmax = 9;
-// const int nclustmax = 50;
-
-// making new grid
-int grid[nrow][ncol] = {0};
-
-void generate();
-
-// inserting cluster into grid int g[nrow][ncol]
-void insert_cluster(int g[nrow][ncol]){
-    // picking a random point on the grid for inital point of cluster and placing it on the grid
+    // Picking a random point on the grid for inital point of cluster and placing it on the grid
     int x = rand() % nrow;
     int y = rand() % ncol;
 
-    // placing the initial hit of the cluster into the g
+    // Placing the initial hit of the cluster into the grid
     g[x][y] = 1;
 
-    // making a random number of max hits in cluster
+    // Choosing random number of hits for cluster
     int hitnum = rand() % nhitmax;
 
-    // randomly orienting the other hits around the initial hit
-    for(unsigned int i=0; i<hitnum; i++){
+    if (debug) std::cout << "Initial hit at (" << x << ", " << y << ") with " << hitnum << " additional hits." << std::endl;
+
+    // Randomly orienting the other hits around the initial hit
+    for(int i = 0; i < hitnum; i++){
         
-        // randomly orienting the hits around the initial point in one of eight positions
+        // Randomly orienting the hits around the initial point in one of eight positions
         // 0 1 2
         // 3 x 4
         // 5 6 7
         // where x is the initial hit
         int hitloc = rand() % 8;
 
-        // // printing the next hit in the cluster's location 
-        // cout<<endl<<hitloc<<endl;
+        // Printing the next hit in the cluster's location 
+        if (debug) std::cout << "Next hit location: " << hitloc << std::endl;
 
-        // skipping the suggested random hit in the boundary cases
-        if((x==0)&&((hitloc==0)||(hitloc==1)||(hitloc==2))){continue;}
-        if((x==nrow-1)&&((hitloc==5)||(hitloc==6)||(hitloc==7))){continue;}
-        if((y==0)&&((hitloc==0)||(hitloc==3)||(hitloc==5))){continue;}
-        if((y==ncol-1)&&((hitloc==2)||(hitloc==4)||(hitloc==7))){continue;}
+        // Skipping the suggested random hit in the boundary cases
+        if (((x == 0) && ((hitloc == 0) || (hitloc == 1) || (hitloc == 2))) ||
+            ((x == nrow-1) && ((hitloc == 5) || (hitloc == 6) || (hitloc == 7))) ||
+            ((y == 0) && ((hitloc == 0) || (hitloc == 3) || (hitloc == 5))) ||
+            ((y == ncol-1) && ((hitloc == 2) || (hitloc == 4) || (hitloc == 7)))) {
+            if (debug) std::cout << "Skipping suggested hit..." << std::endl;
+            continue;
+        }
 
-        // placing the next hit in the cluster onto the grid
-        if(hitloc == 0){
-            int x_h=x-1;
-            int y_h=y-1;
-            g[x_h][y_h]=1;
+        // Placing the next hit in the cluster onto the grid
+        int x_h, y_h;
+        switch(hitloc) {
+            case 0:
+                x_h = x - 1;
+                y_h = y - 1;
+                break;
+            case 1:
+                x_h = x - 1;
+                y_h = y;
+                break;
+            case 2:
+                x_h = x - 1;
+                y_h = y + 1;
+                break;
+            case 3:
+                x_h = x;
+                y_h = y - 1;
+                break;
+            case 4:
+                x_h = x;
+                y_h = y + 1;
+                break;
+            case 5:
+                x_h = x + 1;
+                y_h = y - 1;
+                break;
+            case 6:
+                x_h = x + 1;
+                y_h = y;
+                break;
+            case 7:
+                x_h = x + 1;
+                y_h = y + 1;
+                break;
+            default:
+                std::cerr << "You shouldn't be here!: " << hitloc << std::endl;
+                exit(1);
         }
-        if(hitloc == 1){
-            int x_h=x-1;
-            g[x_h][y]=1;
-        }
-        if(hitloc == 2){
-            int x_h=x-1;
-            int y_h=y+1;
-            g[x_h][y_h]=1;
-        }
-        if(hitloc == 3){
-            int y_h=y-1;
-            g[x][y_h]=1;
-        }
-        if(hitloc == 4){
-            int y_h=y+1;
-            g[x][y_h]=1;
-        }
-        if(hitloc == 5){
-            int x_h=x+1;
-            int y_h=y-1;
-            g[x_h][y_h]=1;
-        }
-        if(hitloc == 6){
-            int x_h=x+1;
-            g[x_h][y]=1;
-        }
-        if(hitloc == 7){
-            int x_h=x+1;
-            int y_h=y+1;
-            g[x_h][y_h]=1;
-        }
+
+        // Placing the hit in the grid
+        g[x_h][y_h] = 1;
     }
 }
 
-// overlap check
-void overlap_check(int f, int g[nrow][ncol], int tg[nrow][ncol]){
-    for(unsigned int i=0; i<nrow; i++){
-        for(unsigned int j=0; j<ncol; j++){
+// Overlap check
+void overlap_check(std::vector<std::vector<int>>& g, std::vector<std::vector<int>>& tg, const int nrow, const int ncol, const bool debug=false) {
+    bool overlap = false;      // Overlap flag
+    
+    for(int i = 0; i < nrow; i++){
+        for(int j = 0; j < ncol; j++){
+            // Checking if hit overlaps
+            if(tg[i][j] != 1) continue;
+            if(g[i][j] == tg[i][j]) overlap = true;
 
-            // checking if hit overlaps
-            if(tg[i][j]!=1){continue;}
-            if(g[i][j]==tg[i][j]){f=1;}
+            // Checking if adjacent there are adjacent hits to cluster in temp grid
+            for(unsigned int b = 0; b < 8; b++){
+                // Skipping boundary cases
+                if (((i == 0) && ((b == 0) || (b == 1) || (b == 2))) ||
+                    ((i == nrow-1) && ((b == 5) || (b == 6) || (b == 7))) ||
+                    ((j == 0) && ((b == 0) || (b == 3) || (b == 5))) ||
+                    ((j == ncol-1) && ((b == 2) || (b == 4) || (b == 7)))) {
+                    continue;
+                }
 
-            // checking if adjacent there are adjacent hits to cluster in temp grid
-            for(unsigned int b=0;b<8;b++){
+                int c0, c1;
+                switch(b) {
+                    case 0:
+                        c0 = i - 1;
+                        c1 = j - 1;
+                        break;
+                    case 1:
+                        c0 = i - 1;
+                        c1 = j;
+                        break;
+                    case 2:
+                        c0 = i - 1;
+                        c1 = j + 1;
+                        break;
+                    case 3:
+                        c0 = i;
+                        c1 = j - 1;
+                        break;
+                    case 4:
+                        c0 = i;
+                        c1 = j + 1;
+                        break;
+                    case 5:
+                        c0 = i + 1;
+                        c1 = j - 1;
+                        break;
+                    case 6:
+                        c0 = i + 1;
+                        c1 = j;
+                        break;
+                    case 7:
+                        c0 = i + 1;
+                        c1 = j + 1;
+                        break;
+                    default:
+                        std::cerr << "You shouldn't be here: " << b << std::endl;
+                        exit(1);
+                }
 
-                // skipping boundary cases
-                if((i==0)&&((b==0)||(b==1)||(b==2))){continue;}
-                if((i==nrow-1)&&((b==5)||(b==6)||(b==7))){continue;}
-                if((j==0)&&((b==0)||(b==3)||(b==5))){continue;}
-                if((j==ncol-1)&&((b==2)||(b==4)||(b==7))){continue;}
-
-                if(b==0){
-                    int c0=i-1;
-                    int c1=j-1;
-                    if(g[c0][c1]==1){f=1;}
-                }
-                if(b==1){
-                    int c0=i-1;
-                    if(g[c0][j]==1){f=1;}
-                }
-                if(b==2){
-                    int c0=i-1;
-                    int c1=j+1;
-                    if(g[c0][c1]==1){f=1;}
-                }
-                if(b==3){
-                    int c1=j-1;
-                    if(g[i][c1]==1){f=1;}
-                }
-                if(b==4){
-                    int c1=j+1;
-                    if(g[i][c1]==1){f=1;}
-                }
-                if(b==5){
-                    int c0=i+1;
-                    int c1=j-1;
-                    if(g[c0][c1]==1){f=1;}
-                }
-                if(b==6){
-                    int c0=i+1;
-                    if(g[c0][j]==1){f=1;}
-                }
-                if(b==7){
-                    int c0=i+1;
-                    int c1=j+1;
-                    if(g[c0][c1]==1){f=1;}
-                }
+                if (g[c0][c1] == 1) overlap = true;
             }
         }
     }
 
-    // printing the temporary grid
-    if(f==1){cout<<"the following cluster grid has overlap with the current grid"<<endl;}
-    cout<<"cluster grid"<<endl;
-    for(unsigned int i=0; i<nrow; i++){
-        for(unsigned int j=0; j<ncol; j++){
-            cout<<tg[i][j];
-        }
-        cout<<endl;
-    }
-    cout<<endl;
-
-    // mapping the separate grid and cluster to the original grid if there's no overlap between the two
-    if(f==0){
-        for(unsigned int i=0; i<nrow; i++){
-            for(unsigned int j=0; j<ncol; j++){
-                if(tg[i][j]==1){g[i][j]=1;}
+    // Mapping separate grid and cluster to the original grid if there's no overlap between the two
+    if (!overlap) {
+        for (unsigned int i = 0; i < nrow; i++ ){
+            for (unsigned int j = 0; j < ncol; j++ ){
+                if (tg[i][j] == 1) g[i][j] = 1;
             }
         }
     }
+    else {
+        if (debug) std::cout << "\nThe following cluster grid has overlap with the current grid" << std::endl;
+        printGrid(tg);
+
+    }
 }
 
+std::vector<std::vector<int>> generate(const size_t nrow, const size_t ncol, const int nhitmax, const int nclustmax, const bool debug=false) {
+    // Initialize grid
+    std::vector<std::vector<int>> grid(nrow, std::vector<int>(ncol, 0));
+
+    // Generating a grid with one randomly placed cluster
+    insert_cluster(grid, nhitmax, debug);
+
+    // Printing the grid after the first cluster
+    if (debug) {
+        std::cout << "\nEmpty grid with one cluster" << std::endl;
+        printGrid(grid);
+    }
+
+    // Determining the max number of clusters after the first cluster for this grid
+    int clustnum = rand() % nclustmax;
+    if (debug) std::cout << "Adding " << clustnum << " more clusters." << std::endl;
+
+    // Going through each of the new potential clusters
+    for(int a = 0; a < clustnum; a++){   
+        // Printing the new grid
+        if(a!=0 && debug){
+            std::cout << "\nCurrent grid" << std::endl;
+            printGrid(grid);
+        }
+        
+        // Making a separate grid for this new cluster
+        std::vector<std::vector<int>> tempgrid(nrow, std::vector<int>(ncol, 0));
+
+        // Placing hits in the separate grid
+        insert_cluster(tempgrid, nhitmax, debug);
+
+        // Comparing the separate grid to the original
+        overlap_check(grid, tempgrid, nrow, ncol, debug);   
+    }
+
+    // Printing the final grid
+    std::cout << "\nFinal grid" << std::endl;
+    printGrid(grid);
+
+    return grid;
+}

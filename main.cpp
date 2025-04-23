@@ -438,14 +438,6 @@ void cluster() {
 }
 
 
-
-
-
-
-
-
-
-
 int main() {
 	generate();
 	
