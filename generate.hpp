@@ -96,11 +96,11 @@ void insert_cluster(std::vector<std::vector<int>>& g, const int nhitmax, const b
 }
 
 // Overlap check
-void overlap_check(std::vector<std::vector<int>>& g, std::vector<std::vector<int>>& tg, const int nrow, const int ncol, const bool debug=false) {
+void overlap_check(std::vector<std::vector<int>>& g, std::vector<std::vector<int>>& tg, const size_t nrow, const size_t ncol, const bool debug=false) {
     bool overlap = false;      // Overlap flag
     
-    for(int i = 0; i < nrow; i++){
-        for(int j = 0; j < ncol; j++){
+    for(size_t i = 0; i < nrow; i++){
+        for(size_t j = 0; j < ncol; j++){
             // Checking if hit overlaps
             if(tg[i][j] != 1) continue;
             if(g[i][j] == tg[i][j]) overlap = true;

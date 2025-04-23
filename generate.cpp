@@ -1,6 +1,7 @@
+#include <iostream>
 #include <string>
 
-#include "generate.h"
+#include "generate.hpp"
 
 int main(int argc, char* argv[]) {
     // Set default parameters
