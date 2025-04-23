@@ -305,7 +305,7 @@ template<size_t Rows, size_t Cols>
  * 	&arr - reference to 2D array, not decayed to pointer (loses size info)
  * 	k->length of submatrices (for 10x10, make it 5)
  */
-vector<vector<ClusterPoint>> naive_findClusters(int (&arr)[Rows][Cols], int k) { 
+vector<vector<ClusterPoint>> naive_findClusters(int (&arr)[Rows][Cols]) { 
 	int clusterID = 0;
 	vector<vector<ClusterPoint>> cluster_pts;
 
@@ -406,7 +406,7 @@ void cluster() {
 	//	cout << endl;
 	//}
 
-	vector<vector<ClusterPoint>> clusters = naive_findClusters(grid, k);
+	vector<vector<ClusterPoint>> clusters = naive_findClusters(grid);
 	//vector<vector<ClusterPoint>> clusters = naive_findClusters(sample_arr, k);
 	// vector<vector<ClusterPoint>> clusters = sw_findClusters(sample_arr, k);
 	
