@@ -235,9 +235,10 @@ void naive_findClustersHLS2(bit_t grid[NROWS + 2][NCOLS + 2], Point pointsGrid[N
 				id_t neighborID2 = clusterGrid1[i + upperLeftNeighborXCoords[2]][j + upperLeftNeighborYCoords[2]];
 				id_t neighborID3 = clusterGrid1[i + upperLeftNeighborXCoords[3]][j + upperLeftNeighborYCoords[3]];
 
-				id_t min1 = (neighborID0 < neighborID1 ? neighborID0 : neighborID1);
-				id_t min2 = (neighborID2 < neighborID3 ? neighborID2 : neighborID3);
-				minClusterID = (min1 < min2 ? min1 : min2);
+				if (neighborID0 && neighborID0 < minClusterID) minClusterID = neighborID0;
+                if (neighborID1 && neighborID1 < minClusterID) minClusterID = neighborID1;
+                if (neighborID2 && neighborID2 < minClusterID) minClusterID = neighborID2;
+                if (neighborID3 && neighborID3 < minClusterID) minClusterID = neighborID3;
 
                 if (minClusterID == maxClusterID) maxClusterID++;
 
@@ -256,19 +257,20 @@ void naive_findClustersHLS2(bit_t grid[NROWS + 2][NCOLS + 2], Point pointsGrid[N
                 id_t minClusterID = clusterGrid1[i][j];
 
                 id_t neighborID0 = clusterGrid1[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]];
-				id_t neighborID1 = clusterGrid1[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]];
-				id_t neighborID2 = clusterGrid1[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]];
-				id_t neighborID3 = clusterGrid1[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]];
+                id_t neighborID1 = clusterGrid1[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]];
+                id_t neighborID2 = clusterGrid1[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]];
+                id_t neighborID3 = clusterGrid1[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]];
 
-				id_t min1 = (neighborID0 < neighborID1 ? neighborID0 : neighborID1);
-				id_t min2 = (neighborID2 < neighborID3 ? neighborID2 : neighborID3);
-				minClusterID = (min1 < min2 ? min1 : min2);
+                if (neighborID0 && neighborID0 < minClusterID) minClusterID = neighborID0;
+                if (neighborID1 && neighborID1 < minClusterID) minClusterID = neighborID1;
+                if (neighborID2 && neighborID2 < minClusterID) minClusterID = neighborID2;
+                if (neighborID3 && neighborID3 < minClusterID) minClusterID = neighborID3;
 
                 clusterGrid2[i][j] = minClusterID;
                 clusterGrid2[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
-				clusterGrid2[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
-				clusterGrid2[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
-				clusterGrid2[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
+                clusterGrid2[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
+                clusterGrid2[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
+                clusterGrid2[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
             }
         }
     }
