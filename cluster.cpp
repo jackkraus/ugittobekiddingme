@@ -49,8 +49,30 @@ int main(int argc, char* argv[]) {
               << std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count()
               << " nanoseconds" << std::endl;
 
+    // Convert grid to C-array
+    int gridC[NROWS][NCOLS];
+    for (size_t i = 0; i < NROWS; ++i) {
+        for (size_t j = 0; j < NCOLS; ++j) {
+            gridC[i][j] = grid[i][j];
+        }
+    }
+
+    std::array<std::array<Point, NCOLS>, NROWS> clusters2 = naive_findClustersHLS2(gridC);
+    
+    // Flatten clusters2
+    std::vector<Point> clusters2_flat;
+    for (size_t i = 0; i < NROWS; ++i) {
+        for (size_t j = 0; j < NCOLS; ++j) {
+            if (clusters2[i][j].clusterID != 0) {
+                clusters2_flat.push_back(clusters2[i][j]);
+            }
+        }
+    }
+
     // Print clusters
     printGridWithClusters(NROWS, NCOLS, clusters1);
+    std::cout << "-------------------------" << std::endl;
+    printGridWithClusters(NROWS, NCOLS, clusters2_flat);
 
     return 0;
 }
