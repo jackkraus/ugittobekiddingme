@@ -1,3 +1,6 @@
+#ifndef GENERATE_HPP
+#define GENERATE_HPP
+
 #include <iostream>
 #include <vector>
 
@@ -168,9 +171,10 @@ void overlap_check(std::vector<std::vector<int>>& g, std::vector<std::vector<int
         }
     }
     else {
-        if (debug) std::cout << "\nThe following cluster grid has overlap with the current grid" << std::endl;
-        printGrid(tg);
-
+        if (debug) {
+            std::cout << "\nThe following cluster grid has overlap with the current grid" << std::endl;
+            printGrid(tg);
+        }
     }
 }
 
@@ -210,8 +214,12 @@ std::vector<std::vector<int>> generate(const size_t nrow, const size_t ncol, con
     }
 
     // Printing the final grid
-    std::cout << "\nFinal grid" << std::endl;
-    printGrid(grid);
+    if (debug) {
+        std::cout << "\nFinal grid" << std::endl;
+        printGrid(grid);
+    }
 
     return grid;
 }
+
+#endif

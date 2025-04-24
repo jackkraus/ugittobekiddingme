@@ -1,0 +1,306 @@
+Parameters:
+nrow: 10
+ncol: 10
+nhitmax: 9
+nclustmax: 9
+seed: 0
+
+Initial hit at (3, 6) with 0 additional hits.
+
+Empty grid with one cluster
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+
+Adding 7 more clusters.
+Initial hit at (3, 5) with 1 additional hits.
+Next hit location: 4
+
+The following cluster grid has overlap with the current grid
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+
+
+Current grid
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+
+Initial hit at (9, 1) with 5 additional hits.
+Next hit location: 3
+Next hit location: 2
+Next hit location: 3
+Next hit location: 3
+Next hit location: 6
+Skipping suggested hit...
+
+Current grid
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 
+1 1 0 0 0 0 0 0 0 0 
+
+Initial hit at (0, 6) with 7 additional hits.
+Next hit location: 0
+Skipping suggested hit...
+Next hit location: 3
+Next hit location: 0
+Skipping suggested hit...
+Next hit location: 7
+Next hit location: 5
+Next hit location: 6
+Next hit location: 2
+Skipping suggested hit...
+
+Current grid
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 
+1 1 0 0 0 0 0 0 0 0 
+
+Initial hit at (2, 3) with 1 additional hits.
+Next hit location: 7
+
+Current grid
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 1 0 0 0 0 0 0 
+0 0 0 0 1 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 
+1 1 0 0 0 0 0 0 0 0 
+
+Initial hit at (9, 2) with 0 additional hits.
+
+The following cluster grid has overlap with the current grid
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 
+
+
+Current grid
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 1 0 0 0 0 0 0 
+0 0 0 0 1 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 1 0 0 0 0 0 0 0 
+1 1 0 0 0 0 0 0 0 0 
+
+Initial hit at (8, 9) with 3 additional hits.
+Next hit location: 1
+Next hit location: 0
+Next hit location: 3
+
+Current grid
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 1 0 0 0 0 0 0 
+0 0 0 0 1 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 0 1 1 
+1 1 0 0 0 0 0 0 0 0 
+
+Initial hit at (2, 9) with 0 additional hits.
+
+Final grid
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 1 0 0 0 0 0 1 
+0 0 0 0 1 0 1 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 1 1 
+0 0 1 0 0 0 0 0 1 1 
+1 1 0 0 0 0 0 0 0 0 
+
+Starting cluster 1 at (0, 5)
+Adding point (1, 5) to cluster 1
+Adding point (0, 6) to cluster 1
+Adding point (1, 6) to cluster 1
+Adding point (1, 7) to cluster 1
+Starting cluster 2 at (2, 3)
+Adding point (3, 4) to cluster 2
+Starting cluster 3 at (2, 9)
+Starting cluster 4 at (3, 6)
+Starting cluster 5 at (7, 8)
+Adding point (8, 8) to cluster 5
+Adding point (7, 9) to cluster 5
+Adding point (8, 9) to cluster 5
+Starting cluster 6 at (8, 2)
+Adding point (9, 1) to cluster 6
+Adding point (9, 0) to cluster 6
+
+Time taken to find clusters (1st method):37433 nanoseconds
+Found hit at (0, 5)
+Point (0, 5) is a new cluster with ID 1
+-------------------------
+Found hit at (0, 6)
+Found cluster ID 1 at (0, 5)
+Added Point (0, 6) to cluster ID 1
+-------------------------
+Found hit at (1, 5)
+Found cluster ID 1 at (0, 5)
+Found point (0, 6) in cluster ID 1
+Added Point (1, 5) to cluster ID 1
+-------------------------
+Found hit at (1, 6)
+Found cluster ID 1 at (0, 5)
+Found point (1, 5) in cluster ID 1
+Found point (0, 6) in cluster ID 1
+Added Point (1, 6) to cluster ID 1
+-------------------------
+Found hit at (1, 7)
+Found cluster ID 1 at (0, 6)
+Found point (1, 6) in cluster ID 1
+Added Point (1, 7) to cluster ID 1
+-------------------------
+Found hit at (2, 3)
+Point (2, 3) is a new cluster with ID 2
+-------------------------
+Found hit at (2, 9)
+Point (2, 9) is a new cluster with ID 3
+-------------------------
+Found hit at (3, 4)
+Found cluster ID 2 at (2, 3)
+Added Point (3, 4) to cluster ID 2
+-------------------------
+Found hit at (3, 6)
+Point (3, 6) is a new cluster with ID 4
+-------------------------
+Found hit at (7, 8)
+Point (7, 8) is a new cluster with ID 5
+-------------------------
+Found hit at (7, 9)
+Found cluster ID 5 at (7, 8)
+Added Point (7, 9) to cluster ID 5
+-------------------------
+Found hit at (8, 2)
+Point (8, 2) is a new cluster with ID 6
+-------------------------
+Found hit at (8, 8)
+Found cluster ID 5 at (7, 8)
+Found point (7, 9) in cluster ID 5
+Added Point (8, 8) to cluster ID 5
+-------------------------
+Found hit at (8, 9)
+Found cluster ID 5 at (7, 8)
+Found point (8, 8) in cluster ID 5
+Found point (7, 9) in cluster ID 5
+Added Point (8, 9) to cluster ID 5
+-------------------------
+Found hit at (9, 0)
+Point (9, 0) is a new cluster with ID 7
+-------------------------
+Found hit at (9, 1)
+Found cluster ID 7 at (9, 0)
+Moving point (8, 2) to cluster ID 7
+Added Point (9, 1) to cluster ID 7
+-------------------------
+
+Time taken to find clusters (2nd method): 127743 nanoseconds
+Point: (0, 5), Cluster ID: 1
+Point: (1, 5), Cluster ID: 1
+Point: (0, 6), Cluster ID: 1
+Point: (1, 6), Cluster ID: 1
+Point: (1, 7), Cluster ID: 1
+Point: (2, 3), Cluster ID: 2
+Point: (3, 4), Cluster ID: 2
+Point: (2, 9), Cluster ID: 3
+Point: (3, 6), Cluster ID: 4
+Point: (7, 8), Cluster ID: 5
+Point: (8, 8), Cluster ID: 5
+Point: (7, 9), Cluster ID: 5
+Point: (8, 9), Cluster ID: 5
+Point: (8, 2), Cluster ID: 6
+Point: (9, 1), Cluster ID: 6
+Point: (9, 0), Cluster ID: 6
+------------------------
+Point: (0, 5), Cluster ID: 1
+Point: (0, 6), Cluster ID: 1
+Point: (1, 5), Cluster ID: 1
+Point: (1, 6), Cluster ID: 1
+Point: (1, 7), Cluster ID: 1
+Point: (2, 3), Cluster ID: 2
+Point: (2, 9), Cluster ID: 3
+Point: (3, 4), Cluster ID: 2
+Point: (3, 6), Cluster ID: 4
+Point: (7, 8), Cluster ID: 5
+Point: (7, 9), Cluster ID: 5
+Point: (8, 2), Cluster ID: 6
+Point: (8, 8), Cluster ID: 5
+Point: (8, 9), Cluster ID: 5
+Point: (9, 0), Cluster ID: 7
+Point: (9, 1), Cluster ID: 7
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 2 0 0 0 0 0 3 
+0 0 0 0 2 0 4 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 5 5 
+0 0 6 0 0 0 0 0 5 5 
+6 6 0 0 0 0 0 0 0 0 
+------------------------
+0 0 0 0 0 1 1 0 0 0 
+0 0 0 0 0 1 1 1 0 0 
+0 0 0 2 0 0 0 0 0 3 
+0 0 0 0 2 0 4 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 5 5 
+0 0 6 0 0 0 0 0 5 5 
+7 7 0 0 0 0 0 0 0 0 
