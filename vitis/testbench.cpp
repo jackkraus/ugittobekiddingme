@@ -1,5 +1,6 @@
 #include <chrono>
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include "generate.hpp"
@@ -39,30 +40,23 @@ int main(int argc, char* argv[]) {
 
     // Generate grid
     std::vector<std::vector<int>> grid = generate(NROWS, NCOLS, nhitmax, nclustmax, debug);
-    
-    // Get naive clusters
-    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-    std::vector<Point> clusters1 = naive_findClusters(grid, debug);
-    std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
 
-    std::cout << "\nTime taken to find clusters (1st method):"
-              << std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count()
-              << " nanoseconds" << std::endl;
-
-    // Convert grid to C-array
-    int gridC[NROWS][NCOLS];
+    // Convert grid to padded array
+    bit_t paddedGrid[NROWS + 2][NCOLS + 2] = {};
     for (size_t i = 0; i < NROWS; ++i) {
         for (size_t j = 0; j < NCOLS; ++j) {
-            gridC[i][j] = grid[i][j];
+            paddedGrid[i + 1][j + 1] = grid[i][j];
         }
     }
 
-    std::array<std::array<Point, NCOLS>, NROWS> clusters2 = naive_findClustersHLS2(gridC);
-    
+    // Get clusters
+    Point clusters2[NROWS + 2][NCOLS + 2];
+    naive_findClustersHLS2(paddedGrid, clusters2);
+
     // Flatten clusters2
     std::vector<Point> clusters2_flat;
-    for (size_t i = 0; i < NROWS; ++i) {
-        for (size_t j = 0; j < NCOLS; ++j) {
+    for (size_t i = 0; i < NROWS + 2; ++i) {
+        for (size_t j = 0; j < NCOLS + 2; ++j) {
             if (clusters2[i][j].clusterID != 0) {
                 clusters2_flat.push_back(clusters2[i][j]);
             }
@@ -70,9 +64,8 @@ int main(int argc, char* argv[]) {
     }
 
     // Print clusters
-    printGridWithClusters(NROWS, NCOLS, clusters1);
-    std::cout << "-------------------------" << std::endl;
-    printGridWithClusters(NROWS, NCOLS, clusters2_flat);
+    std::cout << "\n-----------------------------\n" << std::endl;
+    printGridWithClusters(NROWS + 2, NCOLS + 2, clusters2_flat);
 
     return 0;
 }
