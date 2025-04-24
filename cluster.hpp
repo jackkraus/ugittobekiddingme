@@ -130,12 +130,16 @@ std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid,
                         }
                     }
                 }
-
             }
         }   // Grid cols
     }   // Grid rows
 
     return clusters;
+}
+
+
+void naive_findClusters(int grid[NROWS][NCOLS], int nrows, int ncols, bool debug=false) {
+
 }
 
 

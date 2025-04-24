@@ -7,8 +7,6 @@
 
 int main(int argc, char* argv[]) {
     // Set default parameters
-    int nrow = 10;
-    int ncol = 10;
     int nhitmax = 9;
     int nclustmax = 9;
     int seed = 0;
@@ -16,11 +14,7 @@ int main(int argc, char* argv[]) {
 
     // Parse command line arguments
     for (int i = 1; i < argc; ++i) {
-        if (std::string(argv[i]) == "--nrow" && i + 1 < argc) {
-            nrow = std::stoi(argv[++i]);
-        } else if (std::string(argv[i]) == "--ncol" && i + 1 < argc) {
-            ncol = std::stoi(argv[++i]);
-        } else if (std::string(argv[i]) == "--nhitmax" && i + 1 < argc) {
+        if (std::string(argv[i]) == "--nhitmax" && i + 1 < argc) {
             nhitmax = std::stoi(argv[++i]);
         } else if (std::string(argv[i]) == "--nclustmax" && i + 1 < argc) {
             nclustmax = std::stoi(argv[++i]);
@@ -35,8 +29,8 @@ int main(int argc, char* argv[]) {
     if (debug) {
         // Print the parameters
         std::cout << "Parameters:" << std::endl;
-        std::cout << "nrow: " << nrow << std::endl;
-        std::cout << "ncol: " << ncol << std::endl;
+        std::cout << "nrow: " << NROWS << std::endl;
+        std::cout << "ncol: " << NCOLS << std::endl;
         std::cout << "nhitmax: " << nhitmax << std::endl;
         std::cout << "nclustmax: " << nclustmax << std::endl;
         std::cout << "seed: " << seed << std::endl;
@@ -44,7 +38,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Generate grid
-    std::vector<std::vector<int>> grid = generate(nrow, ncol, nhitmax, nclustmax, debug);
+    std::vector<std::vector<int>> grid = generate(NROWS, NCOLS, nhitmax, nclustmax, debug);
     
     // Get naive clusters
     std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
@@ -56,7 +50,7 @@ int main(int argc, char* argv[]) {
               << " nanoseconds" << std::endl;
 
     // Print clusters
-    printGridWithClusters(nrow, ncol, clusters1);
+    printGridWithClusters(NROWS, NCOLS, clusters1);
 
     return 0;
 }

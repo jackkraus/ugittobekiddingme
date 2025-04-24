@@ -4,6 +4,9 @@
 #include <iostream>
 #include <vector>
 
+#define NROWS 10
+#define NCOLS 10
+
 void printGrid(const std::vector<std::vector<int>>& grid) {
     for (size_t i = 0; i < grid.size(); i++) {
         for (size_t j = 0; j < grid[0].size(); j++) {
@@ -14,7 +17,7 @@ void printGrid(const std::vector<std::vector<int>>& grid) {
     std::cout << std::endl;
 }
 
-// Inserting cluster into grid int g[nrow][ncol]
+// Inserting cluster into grid int g[NROW][NCOL]
 void insert_cluster(std::vector<std::vector<int>>& g, const int nhitmax, const bool debug=false) {
     int nrow = g.size();
     int ncol = g[0].size();
