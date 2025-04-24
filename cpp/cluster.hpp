@@ -40,6 +40,6 @@ std::vector<Point> gridToPoints(const std::vector<std::vector<int>>& grid);
 void printGridWithClusters(int nrows, int ncols, const std::vector<Point>& points);
 
 std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROWS][NCOLS]);
-std::array<std::array<Point, NCOLS + 2>, NROWS + 2> naive_findClustersHLS2(std::array<std::array<bool, NCOLS + 2>, NROWS + 2>& grid);
+void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NROWS + 2][NCOLS + 2]);
 
 #endif

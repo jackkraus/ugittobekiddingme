@@ -7,8 +7,8 @@
 #include <queue>
 #include <vector>
 
-#include "cluster.hpp"
 #include "generate.hpp"
+#include "cluster.hpp"
 
 void printPoints(const std::vector<Point>& points) {
     for (const auto& p : points) {
@@ -235,9 +235,10 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
 				short neighborID2 = clusterGrid1[i + upperLeftNeighborXCoords[2]][j + upperLeftNeighborYCoords[2]];
 				short neighborID3 = clusterGrid1[i + upperLeftNeighborXCoords[3]][j + upperLeftNeighborYCoords[3]];
 
-				short min1 = (neighborID0 < neighborID1 ? neighborID0 : neighborID1);
-				short min2 = (neighborID2 < neighborID3 ? neighborID2 : neighborID3);
-				minClusterID = (min1 < min2 ? min1 : min2);
+                if (neighborID0) minClusterID = (minClusterID < neighborID0 ? minClusterID : neighborID0);
+                if (neighborID1) minClusterID = (minClusterID < neighborID1 ? minClusterID : neighborID1);
+                if (neighborID2) minClusterID = (minClusterID < neighborID2 ? minClusterID : neighborID2);
+                if (neighborID3) minClusterID = (minClusterID < neighborID3 ? minClusterID : neighborID3);       
 
                 if (minClusterID == maxClusterID) maxClusterID++;
 
@@ -260,15 +261,16 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
 				short neighborID2 = clusterGrid1[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]];
 				short neighborID3 = clusterGrid1[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]];
 
-				short min1 = (neighborID0 < neighborID1 ? neighborID0 : neighborID1);
-				short min2 = (neighborID2 < neighborID3 ? neighborID2 : neighborID3);
-				minClusterID = (min1 < min2 ? min1 : min2);
+                if (neighborID0) minClusterID = (minClusterID < neighborID0 ? minClusterID : neighborID0);
+                if (neighborID1) minClusterID = (minClusterID < neighborID1 ? minClusterID : neighborID1);
+                if (neighborID2) minClusterID = (minClusterID < neighborID2 ? minClusterID : neighborID2);
+                if (neighborID3) minClusterID = (minClusterID < neighborID3 ? minClusterID : neighborID3);   
 
-                clusterGrid2[i][j] = minClusterID;
-                clusterGrid2[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
-				clusterGrid2[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
-				clusterGrid2[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
-				clusterGrid2[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
+                clusterGrid1[i][j] = minClusterID;
+                clusterGrid1[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
+				clusterGrid1[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
+				clusterGrid1[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
+				clusterGrid1[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
             }
         }
     }
@@ -280,7 +282,7 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
         for (int j = 0; j < NCOLS + 2; j++) {
 #pragma HLS PIPELINE II=1
             if (grid[i][j]) {
-                short clusterID = clusterGrid2[i][j] ? clusterGrid2[i][j] : clusterGrid1[i][j];
+                short clusterID = clusterGrid1[i][j] ? clusterGrid1[i][j] : clusterGrid1[i][j];
                 pointsGrid[i][j] = Point(i, j, clusterID);
             } else {
                 pointsGrid[i][j] = Point(i, j, 0);

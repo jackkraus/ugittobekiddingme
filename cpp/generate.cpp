@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#include "generate.hpp"
+
 void printGrid(const std::vector<std::vector<int>>& grid) {
     for (size_t i = 0; i < grid.size(); i++) {
         for (size_t j = 0; j < grid[0].size(); j++) {
