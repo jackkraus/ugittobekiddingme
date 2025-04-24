@@ -1,0 +1,141 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'naive_findClustersHLS2'" level="0">
+<item name = "Date">Thu Apr 24 10:03:29 2025
+</item>
+<item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
+<item name = "Project">clustering</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu11p-flga2577-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.002 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1656, 1656, 16.560 us, 16.560 us, 1657, 1657, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner_fu_85">naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner, 402, 402, 4.020 us, 4.020 us, 402, 402, no</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner_fu_92">naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, 1102, 1102, 11.020 us, 11.020 us, 1102, 1102, no</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner_fu_100">naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner, 146, 146, 1.460 us, 1.460 us, 146, 146, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, -, -, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 358, 1490, -</column>
+<column name="Memory">2, -, 0, 0, -</column>
+<column name="Multiplexer">-, -, -, 256, -</column>
+<column name="Register">-, -, 10, -, -</column>
+<specialColumn name="Available SLR">1344, 3072, 864000, 432000, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">~0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">4032, 9216, 2592000, 1296000, 960</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner_fu_100">naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner, 0, 0, 35, 303, 0</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner_fu_85">naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner, 0, 0, 127, 609, 0</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner_fu_92">naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, 0, 0, 196, 578, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="clusterGrid1_U">clusterGrid1_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 144, 16, 1, 2304</column>
+<column name="clusterGrid2_U">clusterGrid2_RAM_2P_BRAM_1R1W, 1, 0, 0, 0, 144, 16, 1, 2304</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">43, 8, 1, 8</column>
+<column name="clusterGrid1_address0">20, 4, 8, 32</column>
+<column name="clusterGrid1_address1">20, 4, 8, 32</column>
+<column name="clusterGrid1_ce0">20, 4, 1, 4</column>
+<column name="clusterGrid1_ce1">20, 4, 1, 4</column>
+<column name="clusterGrid1_d1">14, 3, 16, 48</column>
+<column name="clusterGrid1_we1">14, 3, 1, 3</column>
+<column name="clusterGrid2_address1">14, 3, 8, 24</column>
+<column name="clusterGrid2_ce0">9, 2, 1, 2</column>
+<column name="clusterGrid2_ce1">14, 3, 1, 3</column>
+<column name="clusterGrid2_d1">14, 3, 16, 48</column>
+<column name="clusterGrid2_we1">14, 3, 1, 3</column>
+<column name="grid_address0">20, 4, 8, 32</column>
+<column name="grid_ce0">20, 4, 1, 4</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">7, 0, 7, 0</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner_fu_100_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner_fu_85_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner_fu_92_ap_start_reg">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, naive_findClustersHLS2, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, naive_findClustersHLS2, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, naive_findClustersHLS2, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, naive_findClustersHLS2, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, naive_findClustersHLS2, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, naive_findClustersHLS2, return value</column>
+<column name="grid_address0">out, 8, ap_memory, grid, array</column>
+<column name="grid_ce0">out, 1, ap_memory, grid, array</column>
+<column name="grid_q0">in, 1, ap_memory, grid, array</column>
+<column name="pointsGrid_address0">out, 8, ap_memory, pointsGrid, array</column>
+<column name="pointsGrid_ce0">out, 1, ap_memory, pointsGrid, array</column>
+<column name="pointsGrid_we0">out, 1, ap_memory, pointsGrid, array</column>
+<column name="pointsGrid_d0">out, 96, ap_memory, pointsGrid, array</column>
+</table>
+</item>
+</section>
+</profile>

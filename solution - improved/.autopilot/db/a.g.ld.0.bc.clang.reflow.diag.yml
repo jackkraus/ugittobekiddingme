@@ -1,0 +1,142 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'Point::Point(int, int, int)'
+    DebugLoc:        { File: ./cluster.hpp, Line: 38, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'naive_findClustersHLS2(ap_int<1> (*) [12], Point (*) [12])'
+    DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        bram
+  - String:          ' variable '''
+  - Name:            pointsGrid
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '96'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        bram
+  - String:          ' variable '''
+  - Name:            grid
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '1'
+  - String:          '-bits'
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            InsufficientAlignment
+DebugLoc:        { File: cluster.cpp, Line: 288, Column: 34 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Alignment is insufficient, current alignment is '
+  - Align:           '4'
+  - String:          ' byte(s) but '
+  - RequiredAlign:   '16'
+  - String:          ' is required'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: cluster.cpp, Line: 288, Column: 34 }
+  - OrigDirection:   read
+  - OrigID:          for.body216.load.8
+  - ArrayName:       pointsGrid
+  - String:          ' '
+  - BundleName:      ''
+  - String:          ' '
+  - Function:        'naive_findClustersHLS2(ap_int<1> (*) [12], Point (*) [12])'
+    DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            InsufficientAlignment
+DebugLoc:        { File: cluster.cpp, Line: 288, Column: 34 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Alignment is insufficient, current alignment is '
+  - Align:           '4'
+  - String:          ' byte(s) but '
+  - RequiredAlign:   '16'
+  - String:          ' is required'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cluster.cpp, Line: 288, Column: 34 }
+  - OrigDirection:   write
+  - OrigID:          for.body216.store.17
+  - ArrayName:       pointsGrid
+  - String:          ' '
+  - BundleName:      ''
+  - String:          ' '
+  - Function:        'naive_findClustersHLS2(ap_int<1> (*) [12], Point (*) [12])'
+    DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            InsufficientAlignment
+DebugLoc:        { File: cluster.cpp, Line: 288, Column: 34 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Alignment is insufficient, current alignment is '
+  - Align:           '4'
+  - String:          ' byte(s) but '
+  - RequiredAlign:   '16'
+  - String:          ' is required'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cluster.cpp, Line: 288, Column: 34 }
+  - OrigDirection:   write
+  - OrigID:          if.else.store.5
+  - ArrayName:       pointsGrid
+  - String:          ' '
+  - BundleName:      ''
+  - String:          ' '
+  - Function:        'naive_findClustersHLS2(ap_int<1> (*) [12], Point (*) [12])'
+    DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            InsufficientAlignment
+DebugLoc:        { File: cluster.cpp, Line: 286, Column: 34 }
+Function:        _Z22naive_findClustersHLS2PA12_6ap_intILi1EEPA12_5Point
+Args:            
+  - String:          'Alignment is insufficient, current alignment is '
+  - Align:           '4'
+  - String:          ' byte(s) but '
+  - RequiredAlign:   '16'
+  - String:          ' is required'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: cluster.cpp, Line: 286, Column: 34 }
+  - OrigDirection:   write
+  - OrigID:          bb17.store.9
+  - ArrayName:       pointsGrid
+  - String:          ' '
+  - BundleName:      ''
+  - String:          ' '
+  - Function:        'naive_findClustersHLS2(ap_int<1> (*) [12], Point (*) [12])'
+    DebugLoc:        { File: cluster.cpp, Line: 212, Column: 0 }
+  - String:          ' '
+...

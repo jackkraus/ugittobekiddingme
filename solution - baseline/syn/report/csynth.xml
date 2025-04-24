@@ -1,0 +1,857 @@
+<profile>
+    <ReportVersion>
+        <Version>2023.1</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtexuplus</ProductFamily>
+        <Part>xcvu11p-flga2577-1-e</Part>
+        <TopModelName>naive_findClustersHLS1</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>4.622</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>undef</Best-caseLatency>
+            <Average-caseLatency>undef</Average-caseLatency>
+            <Worst-caseLatency>undef</Worst-caseLatency>
+            <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+            <Interval-min>undef</Interval-min>
+            <Interval-max>undef</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <VITIS_LOOP_151_1_VITIS_LOOP_152_2>
+                <Slack>7.30</Slack>
+                <TripCount>100</TripCount>
+                <Latency>undef</Latency>
+                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                <IterationLatency>undef</IterationLatency>
+                <InstanceList/>
+            </VITIS_LOOP_151_1_VITIS_LOOP_152_2>
+        </SummaryOfLoopLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>14</BRAM_18K>
+            <FF>10622</FF>
+            <LUT>5688</LUT>
+            <URAM>0</URAM>
+            <DSP>0</DSP>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>4032</BRAM_18K>
+            <DSP>9216</DSP>
+            <FF>2592000</FF>
+            <LUT>1296000</LUT>
+            <URAM>960</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_return</name>
+            <Object>naive_findClustersHLS1</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>9600</Bits>
+            <Attribute>data</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>grid_address0</name>
+            <Object>grid</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>7</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>grid_ce0</name>
+            <Object>grid</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>grid_q0</name>
+            <Object>grid</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>grid_address1</name>
+            <Object>grid</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>7</Bits>
+            <Attribute>address</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>grid_ce1</name>
+            <Object>grid</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>grid_q1</name>
+            <Object>grid</Object>
+            <Type>array</Type>
+            <Scope/>
+            <IOProtocol>ap_memory</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>debug</name>
+            <Object>debug</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>data</Attribute>
+            <CType>bool</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="3">
+            <ModuleName>naive_findClustersHLS1</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_naive_findClustersHLS1_Pipeline_1_fu_2520</InstName>
+                    <ModuleName>naive_findClustersHLS1_Pipeline_1</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>2520</ID>
+                    <BindInstances>add_ln142_1_fu_359_p2 add_ln142_2_fu_402_p2 add_ln142_3_fu_414_p2 add_ln142_4_fu_426_p2 add_ln142_5_fu_438_p2 add_ln142_6_fu_450_p2 add_ln142_7_fu_462_p2 add_ln142_8_fu_474_p2 add_ln142_9_fu_486_p2 add_ln142_fu_385_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_naive_findClustersHLS1_Pipeline_2_fu_2530</InstName>
+                    <ModuleName>naive_findClustersHLS1_Pipeline_2</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>2530</ID>
+                    <BindInstances>add_ln147_fu_72_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_naive_findClustersHLS1_Pipeline_4_fu_2538</InstName>
+                    <ModuleName>naive_findClustersHLS1_Pipeline_4</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>2538</ID>
+                    <BindInstances>add_ln37_fu_359_p2 add_ln37_1_fu_402_p2 add_ln37_2_fu_414_p2 add_ln37_3_fu_426_p2 add_ln37_4_fu_438_p2 add_ln37_5_fu_450_p2 add_ln37_6_fu_462_p2 add_ln37_7_fu_474_p2 add_ln37_8_fu_486_p2 add_ln94_fu_385_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3_fu_2545</InstName>
+                    <ModuleName>naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>2545</ID>
+                    <BindInstances>stackIndex_2_fu_643_p2 add_ln175_fu_663_p2 add_ln176_fu_677_p2 add_ln186_fu_919_p2 add_ln175_1_fu_801_p2 add_ln186_1_fu_1113_p2 add_ln186_2_fu_1140_p2 add_ln186_3_fu_1158_p2 add_ln176_1_fu_971_p2 add_ln186_4_fu_1165_p2 add_ln186_5_fu_1177_p2 add_ln186_6_fu_1189_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6_fu_2559</InstName>
+                    <ModuleName>naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>2559</ID>
+                    <BindInstances>add_ln199_1_fu_171_p2 add_ln199_fu_183_p2 add_ln200_fu_254_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>clusterArray_x_U clusterArray_y_U clusterArray_clusterID_U clusterGrid_x_U clusterGrid_y_U clusterGrid_clusterID_U stack_x_U stack_y_U add_ln151_1_fu_2603_p2 add_ln151_fu_2615_p2 clusterID_2_fu_2719_p2 stackIndex_fu_2737_p2 add_ln152_fu_2743_p2</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>naive_findClustersHLS1_Pipeline_1</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.152</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>51</Best-caseLatency>
+                    <Average-caseLatency>51</Average-caseLatency>
+                    <Worst-caseLatency>51</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.510 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.510 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.510 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>51</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>10</TripCount>
+                        <Latency>49</Latency>
+                        <AbsoluteTimeLatency>0.490 us</AbsoluteTimeLatency>
+                        <PipelineII>5</PipelineII>
+                        <PipelineDepth>5</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>17</FF>
+                    <AVAIL_FF>2592000</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>401</LUT>
+                    <AVAIL_LUT>1296000</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4032</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>9216</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_1_fu_359_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_2_fu_402_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_3_fu_414_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_4_fu_426_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_5_fu_438_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_6_fu_450_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_7_fu_462_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_8_fu_474_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_9_fu_486_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142_9"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln142_fu_385_p2" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="add_ln142"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>naive_findClustersHLS1_Pipeline_2</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>1.316</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>101</Best-caseLatency>
+                    <Average-caseLatency>101</Average-caseLatency>
+                    <Worst-caseLatency>101</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.010 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.010 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.010 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>101</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>100</TripCount>
+                        <Latency>99</Latency>
+                        <AbsoluteTimeLatency>0.990 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>9</FF>
+                    <AVAIL_FF>2592000</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>55</LUT>
+                    <AVAIL_LUT>1296000</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4032</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>9216</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln147_fu_72_p2" SOURCE="cluster.cpp:147" URAM="0" VARIABLE="add_ln147"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3</Name>
+            <Loops>
+                <VITIS_LOOP_168_3/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>4.622</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_168_3>
+                        <Name>VITIS_LOOP_168_3</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>undef</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <PipelineII>11</PipelineII>
+                        <PipelineDepth>11</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </VITIS_LOOP_168_3>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>908</FF>
+                    <AVAIL_FF>2592000</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>1860</LUT>
+                    <AVAIL_LUT>1296000</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4032</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>9216</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="stackIndex_2_fu_643_p2" SOURCE="cluster.cpp:170" URAM="0" VARIABLE="stackIndex_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln175_fu_663_p2" SOURCE="cluster.cpp:175" URAM="0" VARIABLE="add_ln175"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln176_fu_677_p2" SOURCE="cluster.cpp:176" URAM="0" VARIABLE="add_ln176"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_fu_919_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln175_1_fu_801_p2" SOURCE="cluster.cpp:175" URAM="0" VARIABLE="add_ln175_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_1_fu_1113_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_2_fu_1140_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_3_fu_1158_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln176_1_fu_971_p2" SOURCE="cluster.cpp:176" URAM="0" VARIABLE="add_ln176_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_4_fu_1165_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_5_fu_1177_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_168_3" OPTYPE="add" PRAGMA="" RTLNAME="add_ln186_6_fu_1189_p2" SOURCE="cluster.cpp:186" URAM="0" VARIABLE="add_ln186_6"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>naive_findClustersHLS1_Pipeline_4</Name>
+            <Loops>
+                <Loop1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>2.152</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>51</Best-caseLatency>
+                    <Average-caseLatency>51</Average-caseLatency>
+                    <Worst-caseLatency>51</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.510 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.510 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.510 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>51</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <Loop1>
+                        <Name>Loop 1</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>10</TripCount>
+                        <Latency>49</Latency>
+                        <AbsoluteTimeLatency>0.490 us</AbsoluteTimeLatency>
+                        <PipelineII>5</PipelineII>
+                        <PipelineDepth>5</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </Loop1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>17</FF>
+                    <AVAIL_FF>2592000</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>401</LUT>
+                    <AVAIL_LUT>1296000</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4032</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>9216</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_fu_359_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_1_fu_402_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_2_fu_414_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_3_fu_426_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_4_fu_438_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_4"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_5_fu_450_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_5"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_6_fu_462_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_6"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_7_fu_474_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_7"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_8_fu_486_p2" SOURCE="./cluster.hpp:37" URAM="0" VARIABLE="add_ln37_8"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="Loop 1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln94_fu_385_p2" SOURCE="E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array:94" URAM="0" VARIABLE="add_ln94"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6</Name>
+            <Loops>
+                <VITIS_LOOP_199_5_VITIS_LOOP_200_6/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>3.179</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>102</Best-caseLatency>
+                    <Average-caseLatency>102</Average-caseLatency>
+                    <Worst-caseLatency>102</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.020 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.020 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.020 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>102</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_199_5_VITIS_LOOP_200_6>
+                        <Name>VITIS_LOOP_199_5_VITIS_LOOP_200_6</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>100</TripCount>
+                        <Latency>100</Latency>
+                        <AbsoluteTimeLatency>1.000 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </VITIS_LOOP_199_5_VITIS_LOOP_200_6>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>25</FF>
+                    <AVAIL_FF>2592000</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>178</LUT>
+                    <AVAIL_LUT>1296000</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4032</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>9216</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_199_5_VITIS_LOOP_200_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln199_1_fu_171_p2" SOURCE="cluster.cpp:199" URAM="0" VARIABLE="add_ln199_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_199_5_VITIS_LOOP_200_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln199_fu_183_p2" SOURCE="cluster.cpp:199" URAM="0" VARIABLE="add_ln199"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_199_5_VITIS_LOOP_200_6" OPTYPE="add" PRAGMA="" RTLNAME="add_ln200_fu_254_p2" SOURCE="cluster.cpp:200" URAM="0" VARIABLE="add_ln200"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>naive_findClustersHLS1</Name>
+            <Loops>
+                <VITIS_LOOP_151_1_VITIS_LOOP_152_2/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>4.622</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_151_1_VITIS_LOOP_152_2>
+                        <Name>VITIS_LOOP_151_1_VITIS_LOOP_152_2</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>100</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <IterationLatency>undef</IterationLatency>
+                        <PipelineDepth>undef</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3_fu_2545</Instance>
+                        </InstanceList>
+                    </VITIS_LOOP_151_1_VITIS_LOOP_152_2>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>14</BRAM_18K>
+                    <AVAIL_BRAM>4032</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <FF>10622</FF>
+                    <AVAIL_FF>2592000</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>5688</LUT>
+                    <AVAIL_LUT>1296000</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>960</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>9216</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="clusterArray_x_U" SOURCE="cluster.cpp:198" URAM="0" VARIABLE="clusterArray_x"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="clusterArray_y_U" SOURCE="cluster.cpp:198" URAM="0" VARIABLE="clusterArray_y"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="clusterArray_clusterID_U" SOURCE="cluster.cpp:198" URAM="0" VARIABLE="clusterArray_clusterID"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="clusterGrid_x_U" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="clusterGrid_x"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="clusterGrid_y_U" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="clusterGrid_y"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="clusterGrid_clusterID_U" SOURCE="cluster.cpp:142" URAM="0" VARIABLE="clusterGrid_clusterID"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="stack_x_U" SOURCE="cluster.cpp:147" URAM="0" VARIABLE="stack_x"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="stack_y_U" SOURCE="cluster.cpp:147" URAM="0" VARIABLE="stack_y"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_151_1_VITIS_LOOP_152_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln151_1_fu_2603_p2" SOURCE="cluster.cpp:151" URAM="0" VARIABLE="add_ln151_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_151_1_VITIS_LOOP_152_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln151_fu_2615_p2" SOURCE="cluster.cpp:151" URAM="0" VARIABLE="add_ln151"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_151_1_VITIS_LOOP_152_2" OPTYPE="add" PRAGMA="" RTLNAME="clusterID_2_fu_2719_p2" SOURCE="cluster.cpp:160" URAM="0" VARIABLE="clusterID_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_151_1_VITIS_LOOP_152_2" OPTYPE="add" PRAGMA="" RTLNAME="stackIndex_fu_2737_p2" SOURCE="cluster.cpp:165" URAM="0" VARIABLE="stackIndex"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_151_1_VITIS_LOOP_152_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln152_fu_2743_p2" SOURCE="cluster.cpp:152" URAM="0" VARIABLE="add_ln152"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_export vivado_clock="5"/>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="grid" index="0" direction="in" srcType="int*" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="grid_address0" name="grid_address0" usage="address" direction="out"/>
+                <hwRef type="port" interface="grid_ce0" name="grid_ce0" usage="control" direction="out"/>
+                <hwRef type="port" interface="grid_q0" name="grid_q0" usage="data" direction="in"/>
+                <hwRef type="port" interface="grid_address1" name="grid_address1" usage="address" direction="out"/>
+                <hwRef type="port" interface="grid_ce1" name="grid_ce1" usage="control" direction="out"/>
+                <hwRef type="port" interface="grid_q1" name="grid_q1" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="debug" index="1" direction="in" srcType="bool" srcSize="1">
+            <hwRefs>
+                <hwRef type="port" interface="debug" name="debug" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <ReturnValue ReturnValueName="srcType">array&lt;std::array&lt;Point, 10&gt;, 10&gt;</ReturnValue>
+    <ReturnValue ReturnValueName="srcSize">9600</ReturnValue>
+    <ReturnValue ReturnValueName="hwRefs" type="port" interface="ap_return" name="ap_return" usage="data" direction="out"/>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_return" type="data" busTypeName="data" protocol="ap_ctrl_hs" mode="master" dataWidth="9600">
+            <portMaps>
+                <portMap portMapName="ap_return">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_return</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="grid_address0" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="7">
+            <portMaps>
+                <portMap portMapName="grid_address0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>grid_address0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="grid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="grid_q0" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="grid_q0">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>grid_q0</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="grid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="grid_address1" type="data" busTypeName="data" protocol="ap_memory" mode="master" dataWidth="7">
+            <portMaps>
+                <portMap portMapName="grid_address1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>grid_address1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="grid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="grid_q1" type="data" busTypeName="data" protocol="ap_memory" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="grid_q1">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>grid_q1</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0" argName="grid"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="debug" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="1">
+            <portMaps>
+                <portMap portMapName="debug">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>debug</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="debug"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="AP_MEMORY">
+                <table>
+                    <keys size="3">Port, Direction, Bitwidth</keys>
+                    <column name="grid_address0">out, 7</column>
+                    <column name="grid_address1">out, 7</column>
+                    <column name="grid_q0">in, 32</column>
+                    <column name="grid_q1">in, 32</column>
+                </table>
+            </item>
+            <item name="Other Ports">
+                <table>
+                    <keys size="4">Port, Mode, Direction, Bitwidth</keys>
+                    <column name="ap_return">, out, 9600</column>
+                    <column name="debug">ap_none, in, 1</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst">reset, ap_rst</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="grid">in, int*</column>
+                    <column name="debug">in, bool</column>
+                    <column name="return">out, array&lt;std::array&lt;Point 10&gt; 10&gt;</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="4">Argument, HW Interface, HW Type, HW Usage</keys>
+                    <column name="grid">grid_address0, port, offset</column>
+                    <column name="grid">grid_ce0, port, </column>
+                    <column name="grid">grid_q0, port, </column>
+                    <column name="grid">grid_address1, port, offset</column>
+                    <column name="grid">grid_ce1, port, </column>
+                    <column name="grid">grid_q1, port, </column>
+                    <column name="debug">debug, port, </column>
+                    <column name="return">ap_return, port, </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=ZZZ.html</ResolutionUrl>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
+    </ReportBurst>
+    <PragmaReport>
+        <Pragma type="resource" location="cluster.cpp:217" status="warning" parentFunction="naive_findclustershls2" variable="clusterGrid1" isDirective="0" options="variable=clusterGrid1 core=RAM_2P_BRAM">
+            <Msg msg_id="207-5531" msg_severity="WARNING" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead"/>
+        </Pragma>
+        <Pragma type="resource" location="cluster.cpp:218" status="warning" parentFunction="naive_findclustershls2" variable="clusterGrid2" isDirective="0" options="variable=clusterGrid2 core=RAM_2P_BRAM">
+            <Msg msg_id="207-5531" msg_severity="WARNING" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead"/>
+        </Pragma>
+        <Pragma type="array_partition" location="cluster.cpp:219" status="valid" parentFunction="naive_findclustershls2" variable="upperLeftNeighborXCoords" isDirective="0" options="variable=upperLeftNeighborXCoords complete dim=1"/>
+        <Pragma type="array_partition" location="cluster.cpp:220" status="valid" parentFunction="naive_findclustershls2" variable="upperLeftNeighborYCoords" isDirective="0" options="variable=upperLeftNeighborYCoords complete dim=1"/>
+        <Pragma type="array_partition" location="cluster.cpp:221" status="valid" parentFunction="naive_findclustershls2" variable="lowerRightNeighborXCoords" isDirective="0" options="variable=lowerRightNeighborXCoords complete dim=1"/>
+        <Pragma type="array_partition" location="cluster.cpp:222" status="valid" parentFunction="naive_findclustershls2" variable="lowerRightNeighborYCoords" isDirective="0" options="variable=lowerRightNeighborYCoords complete dim=1"/>
+        <Pragma type="pipeline" location="cluster.cpp:230" status="valid" parentFunction="naive_findclustershls2" variable="" isDirective="0" options="II=11"/>
+        <Pragma type="pipeline" location="cluster.cpp:255" status="valid" parentFunction="naive_findclustershls2" variable="" isDirective="0" options="II=11"/>
+        <Pragma type="pipeline" location="cluster.cpp:283" status="valid" parentFunction="naive_findclustershls2" variable="" isDirective="0" options="II=1"/>
+    </PragmaReport>
+</profile>
+

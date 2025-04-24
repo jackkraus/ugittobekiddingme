@@ -1,0 +1,5 @@
+2 warnings and 2 errors generated.
+Error while processing C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\cluster.pp.0.cpp.
+clang-tidy applied 22 of 22 suggested fixes.
+Suppressed 259 warnings (257 in non-user code, 2 with check filters).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

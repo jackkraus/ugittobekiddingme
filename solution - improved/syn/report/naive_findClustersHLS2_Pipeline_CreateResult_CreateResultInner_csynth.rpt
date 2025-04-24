@@ -1,0 +1,171 @@
+
+
+================================================================
+== Vitis HLS Report for 'naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner'
+================================================================
+* Date:           Thu Apr 24 10:03:28 2025
+
+* Version:        2023.1 (Build 3854077 on May  4 2023)
+* Project:        clustering
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.147 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      146|      146|  1.460 us|  1.460 us|  146|  146|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- CreateResult_CreateResultInner  |      144|      144|         2|          1|          1|   144|       yes|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      231|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       72|    -|
+|Register             |        -|     -|       35|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|       35|      303|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1344|  3072|   864000|   432000|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4032|  9216|  2592000|  1296000|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |add_ln280_1_fu_154_p2     |         +|   0|  0|  15|           8|           1|
+    |add_ln280_fu_166_p2       |         +|   0|  0|  12|           4|           1|
+    |add_ln282_fu_237_p2       |         +|   0|  0|  12|           4|           1|
+    |add_ln284_fu_224_p2       |         +|   0|  0|  19|           8|           8|
+    |sub_ln284_fu_214_p2       |         -|   0|  0|  19|           8|           8|
+    |icmp_ln280_fu_148_p2      |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln282_fu_172_p2      |      icmp|   0|  0|  12|           4|           4|
+    |icmp_ln285_fu_275_p2      |      icmp|   0|  0|  23|          16|           1|
+    |clusterID_fu_281_p3       |    select|   0|  0|  16|           1|          16|
+    |select_ln280_1_fu_186_p3  |    select|   0|  0|   4|           1|           4|
+    |select_ln280_fu_178_p3    |    select|   0|  0|   4|           1|           1|
+    |select_ln284_fu_299_p3    |    select|   0|  0|  78|           1|          80|
+    |ap_enable_pp0             |       xor|   0|  0|   2|           1|           2|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |Total                     |          |   0|  0| 231|          65|         135|
+    +--------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------+----+-----------+-----+-----------+
+    |                  Name                  | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                             |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                 |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_load                 |   9|          2|    4|          8|
+    |ap_sig_allocacmp_indvar_flatten13_load  |   9|          2|    8|         16|
+    |ap_sig_allocacmp_j_load                 |   9|          2|    4|          8|
+    |i_fu_70                                 |   9|          2|    4|          8|
+    |indvar_flatten13_fu_74                  |   9|          2|    8|         16|
+    |j_fu_66                                 |   9|          2|    4|          8|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |Total                                   |  72|         16|   34|         68|
+    +----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |i_fu_70                  |  4|   0|    4|          0|
+    |indvar_flatten13_fu_74   |  8|   0|    8|          0|
+    |j_fu_66                  |  4|   0|    4|          0|
+    |select_ln280_1_reg_342   |  4|   0|    4|          0|
+    |select_ln280_reg_336     |  4|   0|    4|          0|
+    |zext_ln284_2_reg_347     |  8|   0|   64|         56|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    | 35|   0|   91|         56|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------------------------------------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |                          Source Object                         |    C Type    |
++-----------------------+-----+-----+------------+----------------------------------------------------------------+--------------+
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|  naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner|  return value|
+|grid_address0          |  out|    8|   ap_memory|                                                            grid|         array|
+|grid_ce0               |  out|    1|   ap_memory|                                                            grid|         array|
+|grid_q0                |   in|    1|   ap_memory|                                                            grid|         array|
+|pointsGrid_address0    |  out|    8|   ap_memory|                                                      pointsGrid|         array|
+|pointsGrid_ce0         |  out|    1|   ap_memory|                                                      pointsGrid|         array|
+|pointsGrid_we0         |  out|    1|   ap_memory|                                                      pointsGrid|         array|
+|pointsGrid_d0          |  out|   96|   ap_memory|                                                      pointsGrid|         array|
+|clusterGrid1_address0  |  out|    8|   ap_memory|                                                    clusterGrid1|         array|
+|clusterGrid1_ce0       |  out|    1|   ap_memory|                                                    clusterGrid1|         array|
+|clusterGrid1_q0        |   in|   16|   ap_memory|                                                    clusterGrid1|         array|
+|clusterGrid2_address0  |  out|    8|   ap_memory|                                                    clusterGrid2|         array|
+|clusterGrid2_ce0       |  out|    1|   ap_memory|                                                    clusterGrid2|         array|
+|clusterGrid2_q0        |   in|   16|   ap_memory|                                                    clusterGrid2|         array|
++-----------------------+-----+-----+------------+----------------------------------------------------------------+--------------+
+

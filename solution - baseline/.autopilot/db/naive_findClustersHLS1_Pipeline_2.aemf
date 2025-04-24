@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1745506904363">
+  <ports id="1" name="stack_x" type="PortType" coreName="RAM" coreId="0" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="100">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <ports id="2" name="stack_y" type="PortType" coreName="RAM" coreId="1953391988" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="100">
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="26" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="27" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="28" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="29" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="30" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@ports.0"/>
+  <edges id="33" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="34" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@ports.1"/>
+  <edges id="36" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="37" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="42" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="44" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="45" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="48" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="49" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="50" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="51" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="52" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
+  <edges id="68" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="69" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="70" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="71" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="72" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="73" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <blocks id="6" name="newFuncRoot" type="BlockType">
+    <controlOutputObjs>arrayinit.body</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="3" name="arrayinit_curidx" coreId="0" bitwidth="7" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="arrayinit_curidx_write_ln0" coreId="0" opcode="store" m_display="0" m_delay="0.46" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="br_ln0" coreId="0" opcode="br" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <controlInputObjs>arrayinit.body</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="21" name="for.body12.preheader.exitStub" type="BlockType">
+    <controlInputObjs>arrayinit.body</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="20" name="_ln0" coreId="0" opcode="ret" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1"/>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="80" pipe_depth="1" RegionName="Loop 1">
+    <basic_blocks id="19" name="arrayinit.body" type="BlockType">
+      <controlInputObjs>newFuncRoot</controlInputObjs>
+      <controlInputObjs>arrayinit.body</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>for.body12.preheader.exitStub</controlOutputObjs>
+      <controlOutputObjs>arrayinit.body</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="7" name="arrayinit_curidx_load" lineNumber="147" fileName="cluster.cpp" fileDirectory="../." coreId="4294967295" contextFuncName="naive_findClustersHLS1" bitwidth="7" opcode="load" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="8" name="arrayinit_curidx_cast" lineNumber="147" fileName="cluster.cpp" fileDirectory="../." rtlName="arrayinit_curidx_cast_fu_66_p1" coreId="4294967295" contextFuncName="naive_findClustersHLS1" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="11" name="this_x" lineNumber="147" originalName="this.x" fileName="cluster.cpp" fileDirectory="../." coreId="0" contextFuncName="naive_findClustersHLS1" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>stack_x</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="12" name="this_y" lineNumber="147" originalName="this.y" fileName="cluster.cpp" fileDirectory="../." coreId="0" contextFuncName="naive_findClustersHLS1" bitwidth="7" opcode="getelementptr" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>stack_y</dataOutputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="13" name="add_ln147" lineNumber="147" fileName="cluster.cpp" fileDirectory="../." rtlName="add_ln147_fu_72_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="naive_findClustersHLS1" bitwidth="7" opcode="add" m_display="0" m_delay="0.85" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="this_x_write_ln37" lineNumber="37" fileName="./cluster.hpp" fileDirectory="../." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="Point" opcode="store" m_display="0" m_delay="1.29" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="./cluster.hpp" linenumber="37" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="Point"/>
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="this_y_write_ln37" lineNumber="37" fileName="./cluster.hpp" fileDirectory="../." coreName="RAM" implIndex="auto" control="no" opType="ram" coreId="83" contextFuncName="Point" opcode="store" m_display="0" m_delay="1.29" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="./cluster.hpp" linenumber="37" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="Point"/>
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="icmp_ln147" lineNumber="147" fileName="cluster.cpp" fileDirectory="../." rtlName="icmp_ln147_fu_78_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="naive_findClustersHLS1" bitwidth="1" opcode="icmp" m_display="0" m_delay="0.85" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>load</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="arrayinit_curidx_write_ln147" lineNumber="147" fileName="cluster.cpp" fileDirectory="../." coreId="0" contextFuncName="naive_findClustersHLS1" opcode="store" m_display="0" m_delay="0.46" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="br_ln147" lineNumber="147" fileName="cluster.cpp" fileDirectory="../." coreId="0" contextFuncName="naive_findClustersHLS1" opcode="br" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="cluster.cpp" linenumber="147" fileDirectory="C:\Users\abelo\vitis_workspace\clustering" functionName="naive_findClustersHLS1"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>arrayinit.body</controlInputObjs>
+        <controlInputObjs>for.body12.preheader.exitStub</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="cluster.cpp">
+        <validLinenumbers>147</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="./cluster.hpp">
+        <validLinenumbers>37</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <regnodes realName="arrayinit_curidx_reg_89">
+    <nodeIds>3</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln147_fu_78">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="arrayinit_curidx_cast_fu_66">
+    <nodeIds>8</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="this_x_gep_fu_30">
+    <nodeIds>11</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln147_fu_72">
+    <nodeIds>13</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="arrayinit_curidx_fu_26">
+    <nodeIds>3</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="this_y_gep_fu_37">
+    <nodeIds>12</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="arrayinit_curidx_load_load_fu_63">
+    <nodeIds>7</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln147_store_fu_84">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln0_store_fu_58">
+    <nodeIds>4</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="stack_x">
+    <nodeIds>14</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="stack_y">
+    <nodeIds>15</nodeIds>
+  </memoryPorts>
+  <ioPorts name="stack_x(p0)">
+    <contents name="store">
+      <nodeIds>14</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="stack_y(p0)">
+    <contents name="store">
+      <nodeIds>15</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+      <operations id="7" stage="1" latency="1"/>
+      <operations id="8" stage="1" latency="1"/>
+      <operations id="9" stage="1" latency="1"/>
+      <operations id="10" stage="1" latency="1"/>
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="naive_findClustersHLS1_Pipeline_2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="101" mMaxLatency="101">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>6</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="Loop_1" mII="1" mDepth="1" mMinTripCount="100" mMaxTripCount="100" mMinLatency="99" mMaxLatency="99" mType="1">
+      <basicBlocks>19</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>21</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

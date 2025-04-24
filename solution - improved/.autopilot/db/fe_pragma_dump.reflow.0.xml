@@ -1,0 +1,27 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int<16, true>(ap_int_base<16, true> const&)" off="0" region="0" recursive="0"/>
+<pragma file="E:/Vitis_HLS/2023.1/common/technology/autopilot\etc/ap_common.h" line="523" pragmaType="inline" parentfunction="_ZN8ssdm_intILi1ELb0EEC2EDq1_j" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, true>::operator long long() const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<16, true>::operator==<16, true>(ap_int_base<16, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="bool ap_int_base<16, true>::operator<<16, true>(ap_int_base<16, true> const&) const" off="0" region="0" recursive="0"/>
+<pragma file="cluster.cpp" line="283" pragmaType="pipeline" parentfunction="naive_findClustersHLS2" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cluster.cpp" line="255" pragmaType="pipeline" parentfunction="naive_findClustersHLS2" off="0" ii="11" rewind="0" style=""/>
+<pragma file="cluster.cpp" line="230" pragmaType="pipeline" parentfunction="naive_findClustersHLS2" off="0" ii="11" rewind="0" style=""/>
+<pragma file="cluster.cpp" line="217" pragmaType="bind_storage" parentfunction="naive_findClustersHLS2" op="666" impl="22" latency="-1" variable="clusterGrid1"/>
+<pragma file="cluster.cpp" line="218" pragmaType="bind_storage" parentfunction="naive_findClustersHLS2" op="666" impl="22" latency="-1" variable="clusterGrid2"/>
+<pragma file="cluster.cpp" line="219" pragmaType="array_partition" parentfunction="naive_findClustersHLS2" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZL24upperLeftNeighborXCoords"/>
+<pragma file="cluster.cpp" line="220" pragmaType="array_partition" parentfunction="naive_findClustersHLS2" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZL24upperLeftNeighborYCoords"/>
+<pragma file="cluster.cpp" line="221" pragmaType="array_partition" parentfunction="naive_findClustersHLS2" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZL25lowerRightNeighborXCoords"/>
+<pragma file="cluster.cpp" line="222" pragmaType="array_partition" parentfunction="naive_findClustersHLS2" dim="1" factor="0" mode="complete" dynamic="0" variable="_ZL25lowerRightNeighborYCoords"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int<16>::ap_int(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<1, false>::ap_int_base(int)" off="0" region="0" recursive="0"/>
+<pragma file="E:/Vitis_HLS/2023.1/common/technology/autopilot\etc/ap_common.h" line="515" pragmaType="inline" parentfunction="ssdm_int<16, true>::ssdm_int(short)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>::operator++(int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<16, true>& ap_int_base<16, true>::operator+=<1, false>(ap_int_base<1, false> const&)" off="0" region="0" recursive="0"/>
+<pragma file="E:/Vitis_HLS/2023.1/common/technology/autopilot\etc/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<16, true>::ssdm_int()" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+</pragmas>

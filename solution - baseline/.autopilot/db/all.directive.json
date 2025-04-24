@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "naive_findClustersHLS1",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "naive_findClustersHLS1"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Users/abelo/vitis_workspace/clustering/clustering/solution1/csynth.tcl",
+    "sourceLine": 20,
+    "success": true
+  }
+]

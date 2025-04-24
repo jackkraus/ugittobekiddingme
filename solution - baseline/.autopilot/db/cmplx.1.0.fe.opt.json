@@ -1,0 +1,97 @@
+{
+  "0": {
+    "basicblocks": 66,
+    "calls": "2 2 5 5 6 7 8",
+    "file": "cluster.cpp",
+    "fileloc": 134,
+    "instructions": 268,
+    "loads": {
+      "G": 2,
+      "L": 12,
+      "T": 2
+    },
+    "name": "naive_findClustersHLS1",
+    "stores": {
+      "L": 7
+    },
+    "total_instructions": 335
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "array",
+    "fileloc": 55,
+    "instructions": 2,
+    "name": "_S_ref",
+    "total_instructions": 2
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "cluster.hpp",
+    "fileloc": 37,
+    "instructions": 7,
+    "name": "Point",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 7
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "array",
+    "fileloc": 55,
+    "instructions": 2,
+    "name": "_S_ref",
+    "total_instructions": 2
+  },
+  "4": {
+    "basicblocks": 4,
+    "calls": "2",
+    "file": "array",
+    "fileloc": 94,
+    "instructions": 11,
+    "name": "array",
+    "total_instructions": 18
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "cluster.hpp",
+    "fileloc": 38,
+    "instructions": 7,
+    "name": "Point",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 7
+  },
+  "6": {
+    "basicblocks": 4,
+    "calls": "4",
+    "file": "array",
+    "fileloc": 94,
+    "instructions": 11,
+    "name": "array",
+    "total_instructions": 29
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "3",
+    "file": "array",
+    "fileloc": 185,
+    "instructions": 3,
+    "name": "operator[]",
+    "total_instructions": 5
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "array",
+    "fileloc": 185,
+    "instructions": 3,
+    "name": "operator[]",
+    "total_instructions": 5
+  }
+}

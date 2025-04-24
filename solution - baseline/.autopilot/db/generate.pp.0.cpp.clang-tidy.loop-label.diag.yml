@@ -1,0 +1,85 @@
+---
+MainSourceFile:  'C:/Users/abelo/vitis_workspace/clustering/clustering/solution1/.autopilot/db/generate.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_5_1:  '
+    FileOffset:      5
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          850446
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_5_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_6_2:  '
+    FileOffset:      6
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          850497
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_6_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_32_1:  '
+    FileOffset:      32
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          851063
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_32_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_102_1:  '
+    FileOffset:      102
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          852850
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_102_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_103_2:  '
+    FileOffset:      103
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          852892
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_103_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_109_3:  '
+    FileOffset:      109
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          853033
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_109_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_164_4:  '
+    FileOffset:      164
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          854781
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_164_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_165_5:  '
+    FileOffset:      165
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          854835
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_165_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_196_1:  '
+    FileOffset:      196
+    FilePath:        generate.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp'
+        Offset:          855647
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_196_1: '
+...

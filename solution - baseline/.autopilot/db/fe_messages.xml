@@ -1,0 +1,66 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5531" msg_severity="WARNING" msg_loc="cluster.cpp:217:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5531" msg_severity="WARNING" msg_loc="cluster.cpp:218:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/abelo/vitis_workspace/clustering/clustering/solution1/csynth.tcl:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="naive_findClustersHLS1" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=naive_findClustersHLS1" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:217:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=clusterGrid1 core=RAM_2P_BRAM" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:218:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=clusterGrid2 core=RAM_2P_BRAM" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:219:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=upperLeftNeighborXCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:220:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=upperLeftNeighborYCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:221:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=lowerRightNeighborXCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:222:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=lowerRightNeighborYCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:230:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=11" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:255:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=11" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:283:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array:94:0" msg_body="Inlining function 'Point::Point()' into 'std::array&lt;Point, 10ul&gt;::array()'">
+        <args Callee="Point::Point()" Callee-DebugLoc="File ./cluster.hpp Line 37 Column 0" Caller="std::array&lt;Point, 10ul&gt;::array()" Caller-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 94 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array:94:0" msg_body="Inlining function 'std::array&lt;Point, 10ul&gt;::array()' into 'std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::array()'">
+        <args Callee="std::array&lt;Point, 10ul&gt;::array()" Callee-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 94 Column 0" Caller="std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::array()" Caller-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 94 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array:186:0" msg_body="Inlining function 'std::__array_traits&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::_S_ref(std::array&lt;Point, 10ul&gt; const (&amp;) [10], unsigned long)' into 'std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::operator[](unsigned long)'">
+        <args Callee="std::__array_traits&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::_S_ref(std::array&lt;Point, 10ul&gt; const (&amp;) [10], unsigned long)" Callee-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 56 Column 0" Caller="std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::operator[](unsigned long)" Caller-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 186 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array:186:0" msg_body="Inlining function 'std::__array_traits&lt;Point, 10ul&gt;::_S_ref(Point const (&amp;) [10], unsigned long)' into 'std::array&lt;Point, 10ul&gt;::operator[](unsigned long)'">
+        <args Callee="std::__array_traits&lt;Point, 10ul&gt;::_S_ref(Point const (&amp;) [10], unsigned long)" Callee-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 56 Column 0" Caller="std::array&lt;Point, 10ul&gt;::operator[](unsigned long)" Caller-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 186 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="cluster.cpp:134:0" msg_body="Inlining function 'Point::Point() (.7)' into 'naive_findClustersHLS1(int (*) [10], bool)'">
+        <args Callee="Point::Point() (.7)" Callee-DebugLoc="File ./cluster.hpp Line 37 Column 0" Caller="naive_findClustersHLS1(int (*) [10], bool)" Caller-DebugLoc="File cluster.cpp Line 134 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="cluster.cpp:134:0" msg_body="Inlining function 'Point::Point(int, int, int)' into 'naive_findClustersHLS1(int (*) [10], bool)'">
+        <args Callee="Point::Point(int, int, int)" Callee-DebugLoc="File ./cluster.hpp Line 38 Column 0" Caller="naive_findClustersHLS1(int (*) [10], bool)" Caller-DebugLoc="File cluster.cpp Line 134 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="cluster.cpp:134:0" msg_body="Inlining function 'std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::array()' into 'naive_findClustersHLS1(int (*) [10], bool)'">
+        <args Callee="std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::array()" Callee-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 94 Column 0" Caller="naive_findClustersHLS1(int (*) [10], bool)" Caller-DebugLoc="File cluster.cpp Line 134 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="cluster.cpp:134:0" msg_body="Inlining function 'std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::operator[](unsigned long)' into 'naive_findClustersHLS1(int (*) [10], bool)'">
+        <args Callee="std::array&lt;std::array&lt;Point, 10ul&gt;, 10ul&gt;::operator[](unsigned long)" Callee-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 186 Column 0" Caller="naive_findClustersHLS1(int (*) [10], bool)" Caller-DebugLoc="File cluster.cpp Line 134 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="cluster.cpp:134:0" msg_body="Inlining function 'std::array&lt;Point, 10ul&gt;::operator[](unsigned long)' into 'naive_findClustersHLS1(int (*) [10], bool)'">
+        <args Callee="std::array&lt;Point, 10ul&gt;::operator[](unsigned long)" Callee-DebugLoc="File {E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array} Line 186 Column 0" Caller="naive_findClustersHLS1(int (*) [10], bool)" Caller-DebugLoc="File cluster.cpp Line 134 Column 0"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

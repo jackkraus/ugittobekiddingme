@@ -1,0 +1,30 @@
+In file included from E:/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from E:/Vitis_HLS/2023.1/include/hls_fpo.h:143,
+                 from E:/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from E:/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
+                 from E:/Vitis_HLS/2023.1/include/ap_fixed.h:9,
+                 from apatb_naive_findClustersHLS2.cpp:12:
+E:/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from E:/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
+                 from E:/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from E:/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
+                 from E:/Vitis_HLS/2023.1/include/ap_fixed.h:9,
+                 from apatb_naive_findClustersHLS2.cpp:12:
+E:/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+C:/Users/abelo/vitis_workspace/clustering/main.cpp: In function 'int main(int, char**)':
+C:/Users/abelo/vitis_workspace/clustering/main.cpp:53:96: error: invalid initialization of reference of type 'std::array<std::array<ap_int<1>, 12ull>, 12ull>&' from expression of type 'std::array<std::array<int, 12ull>, 12ull>'
+     std::array<std::array<Point, NCOLS + 2>, NROWS + 2> clusters2 = naive_findClustersHLS2(paddedGrid);
+                                                                                                ^
+In file included from C:/Users/abelo/vitis_workspace/clustering/main.cpp:7:0:
+C:/Users/abelo/vitis_workspace/clustering/cluster.hpp:47:47: note: in passing argument 1 of 'std::array<std::array<Point, 12ull>, 12ull> naive_findClustersHLS2(std::array<std::array<ap_int<1>, 12ull>, 12ull>&)'
+ std::array<std::array<Point, NCOLS + 2>, NROWS + 2> naive_findClustersHLS2(std::array<std::array<bit_t, NCOLS + 2>, NROWS + 2>& grid);
+                                               ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [obj/main.cpp_pre.cpp.tb.o] Error 1

@@ -1,0 +1,526 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'naive_findClustersHLS1'" level="0">
+<item name = "Date">Thu Apr 24 10:01:46 2025
+</item>
+<item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
+<item name = "Project">clustering</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu11p-flga2577-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 4.622 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_naive_findClustersHLS1_Pipeline_1_fu_2520">naive_findClustersHLS1_Pipeline_1, 51, 51, 0.510 us, 0.510 us, 51, 51, no</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_2_fu_2530">naive_findClustersHLS1_Pipeline_2, 101, 101, 1.010 us, 1.010 us, 101, 101, no</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_4_fu_2538">naive_findClustersHLS1_Pipeline_4, 51, 51, 0.510 us, 0.510 us, 51, 51, no</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3_fu_2545">naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3, ?, ?, ?, ?, ?, ?, no</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6_fu_2559">naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6, 102, 102, 1.020 us, 1.020 us, 102, 102, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_151_1_VITIS_LOOP_152_2">?, ?, ?, -, -, 100, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 266, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 976, 2895, -</column>
+<column name="Memory">14, -, 0, 0, 0</column>
+<column name="Multiplexer">-, -, -, 2527, -</column>
+<column name="Register">-, -, 9646, -, -</column>
+<specialColumn name="Available SLR">1344, 3072, 864000, 432000, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">1, 0, 1, 1, 0</specialColumn>
+<specialColumn name="Available">4032, 9216, 2592000, 1296000, 960</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_naive_findClustersHLS1_Pipeline_1_fu_2520">naive_findClustersHLS1_Pipeline_1, 0, 0, 17, 401, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_2_fu_2530">naive_findClustersHLS1_Pipeline_2, 0, 0, 9, 55, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_4_fu_2538">naive_findClustersHLS1_Pipeline_4, 0, 0, 17, 401, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3_fu_2545">naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3, 0, 0, 908, 1860, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6_fu_2559">naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6, 0, 0, 25, 178, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="clusterArray_x_U">clusterArray_x_RAM_AUTO_1R1W, 2, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="clusterArray_y_U">clusterArray_x_RAM_AUTO_1R1W, 2, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="clusterArray_clusterID_U">clusterArray_x_RAM_AUTO_1R1W, 2, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="clusterGrid_clusterID_U">clusterArray_x_RAM_AUTO_1R1W, 2, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="clusterGrid_x_U">clusterGrid_x_RAM_AUTO_1R1W, 2, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="clusterGrid_y_U">clusterGrid_x_RAM_AUTO_1R1W, 2, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="stack_x_U">stack_x_RAM_AUTO_1R1W, 1, 0, 0, 0, 100, 32, 1, 3200</column>
+<column name="stack_y_U">stack_x_RAM_AUTO_1R1W, 1, 0, 0, 0, 100, 32, 1, 3200</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln151_1_fu_2603_p2">+, 0, 0, 14, 7, 1</column>
+<column name="add_ln151_fu_2615_p2">+, 0, 0, 12, 4, 1</column>
+<column name="add_ln152_fu_2743_p2">+, 0, 0, 12, 4, 1</column>
+<column name="add_ln159_1_fu_2673_p2">+, 0, 0, 16, 7, 7</column>
+<column name="add_ln159_fu_2663_p2">+, 0, 0, 16, 7, 7</column>
+<column name="clusterID_2_fu_2719_p2">+, 0, 0, 39, 32, 1</column>
+<column name="stackIndex_fu_2737_p2">+, 0, 0, 39, 32, 1</column>
+<column name="ap_block_state6_on_subcall_done">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln151_fu_2597_p2">icmp, 0, 0, 14, 7, 6</column>
+<column name="icmp_ln152_fu_2621_p2">icmp, 0, 0, 12, 4, 4</column>
+<column name="icmp_ln159_1_fu_2701_p2">icmp, 0, 0, 39, 32, 1</column>
+<column name="icmp_ln159_fu_2695_p2">icmp, 0, 0, 39, 32, 1</column>
+<column name="ap_block_state2_on_subcall_done">or, 0, 0, 2, 1, 1</column>
+<column name="or_ln159_fu_2707_p2">or, 0, 0, 2, 1, 1</column>
+<column name="select_ln151_1_fu_2635_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln151_fu_2627_p3">select, 0, 0, 4, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">261, 61, 1, 61</column>
+<column name="clusterArray_clusterID_address0">229, 53, 7, 371</column>
+<column name="clusterArray_clusterID_address1">225, 52, 7, 364</column>
+<column name="clusterArray_clusterID_ce0">20, 4, 1, 4</column>
+<column name="clusterArray_clusterID_ce1">14, 3, 1, 3</column>
+<column name="clusterArray_clusterID_d0">14, 3, 32, 96</column>
+<column name="clusterArray_clusterID_we0">14, 3, 1, 3</column>
+<column name="clusterArray_clusterID_we1">9, 2, 1, 2</column>
+<column name="clusterArray_x_address0">229, 53, 7, 371</column>
+<column name="clusterArray_x_address1">225, 52, 7, 364</column>
+<column name="clusterArray_x_ce0">20, 4, 1, 4</column>
+<column name="clusterArray_x_ce1">14, 3, 1, 3</column>
+<column name="clusterArray_x_d0">14, 3, 32, 96</column>
+<column name="clusterArray_x_we0">14, 3, 1, 3</column>
+<column name="clusterArray_x_we1">9, 2, 1, 2</column>
+<column name="clusterArray_y_address0">229, 53, 7, 371</column>
+<column name="clusterArray_y_address1">225, 52, 7, 364</column>
+<column name="clusterArray_y_ce0">20, 4, 1, 4</column>
+<column name="clusterArray_y_ce1">14, 3, 1, 3</column>
+<column name="clusterArray_y_d0">14, 3, 32, 96</column>
+<column name="clusterArray_y_we0">14, 3, 1, 3</column>
+<column name="clusterArray_y_we1">9, 2, 1, 2</column>
+<column name="clusterGrid_clusterID_address0">31, 6, 7, 42</column>
+<column name="clusterGrid_clusterID_address1">14, 3, 7, 21</column>
+<column name="clusterGrid_clusterID_ce0">26, 5, 1, 5</column>
+<column name="clusterGrid_clusterID_ce1">14, 3, 1, 3</column>
+<column name="clusterGrid_clusterID_d0">20, 4, 32, 128</column>
+<column name="clusterGrid_clusterID_d1">14, 3, 32, 96</column>
+<column name="clusterGrid_clusterID_we0">20, 4, 1, 4</column>
+<column name="clusterGrid_clusterID_we1">14, 3, 1, 3</column>
+<column name="clusterGrid_x_address0">26, 5, 7, 35</column>
+<column name="clusterGrid_x_address1">14, 3, 7, 21</column>
+<column name="clusterGrid_x_ce0">26, 5, 1, 5</column>
+<column name="clusterGrid_x_ce1">14, 3, 1, 3</column>
+<column name="clusterGrid_x_d0">20, 4, 32, 128</column>
+<column name="clusterGrid_x_d1">14, 3, 32, 96</column>
+<column name="clusterGrid_x_we0">20, 4, 1, 4</column>
+<column name="clusterGrid_x_we1">14, 3, 1, 3</column>
+<column name="clusterGrid_y_address0">26, 5, 7, 35</column>
+<column name="clusterGrid_y_address1">14, 3, 7, 21</column>
+<column name="clusterGrid_y_ce0">26, 5, 1, 5</column>
+<column name="clusterGrid_y_ce1">14, 3, 1, 3</column>
+<column name="clusterGrid_y_d0">20, 4, 32, 128</column>
+<column name="clusterGrid_y_d1">14, 3, 32, 96</column>
+<column name="clusterGrid_y_we0">20, 4, 1, 4</column>
+<column name="clusterGrid_y_we1">14, 3, 1, 3</column>
+<column name="clusterID_fu_284">9, 2, 32, 64</column>
+<column name="grid_address0">14, 3, 7, 21</column>
+<column name="grid_ce0">14, 3, 1, 3</column>
+<column name="grid_ce1">9, 2, 1, 2</column>
+<column name="i_fu_272">9, 2, 4, 8</column>
+<column name="indvar_flatten_fu_276">9, 2, 7, 14</column>
+<column name="j_fu_268">9, 2, 4, 8</column>
+<column name="stackIndex_1_fu_280">9, 2, 32, 64</column>
+<column name="stack_x_address0">20, 4, 7, 28</column>
+<column name="stack_x_ce0">20, 4, 1, 4</column>
+<column name="stack_x_d0">20, 4, 32, 128</column>
+<column name="stack_x_we0">20, 4, 1, 4</column>
+<column name="stack_y_address0">20, 4, 7, 28</column>
+<column name="stack_y_ce0">20, 4, 1, 4</column>
+<column name="stack_y_d0">20, 4, 32, 128</column>
+<column name="stack_y_we0">20, 4, 1, 4</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln151_1_reg_4609">7, 0, 7, 0</column>
+<column name="ap_CS_fsm">60, 0, 60, 0</column>
+<column name="clusterArray_clusterID_load_10_reg_4819">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_11_reg_4834">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_12_reg_4849">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_13_reg_4864">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_14_reg_4879">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_15_reg_4894">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_16_reg_4909">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_17_reg_4924">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_18_reg_4939">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_19_reg_4954">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_1_reg_4684">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_20_reg_4969">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_21_reg_4984">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_22_reg_4999">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_23_reg_5014">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_24_reg_5029">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_25_reg_5044">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_26_reg_5059">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_27_reg_5074">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_28_reg_5089">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_29_reg_5104">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_2_reg_4699">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_30_reg_5119">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_31_reg_5134">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_32_reg_5149">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_33_reg_5164">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_34_reg_5179">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_35_reg_5194">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_36_reg_5209">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_37_reg_5224">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_38_reg_5239">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_39_reg_5254">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_3_reg_4714">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_40_reg_5269">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_41_reg_5284">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_42_reg_5299">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_43_reg_5314">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_44_reg_5329">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_45_reg_5344">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_46_reg_5359">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_47_reg_5374">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_48_reg_5389">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_49_reg_5404">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_4_reg_4729">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_50_reg_5419">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_51_reg_5434">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_52_reg_5449">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_53_reg_5464">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_54_reg_5479">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_55_reg_5494">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_56_reg_5509">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_57_reg_5524">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_58_reg_5539">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_59_reg_5554">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_5_reg_4744">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_60_reg_5569">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_61_reg_5584">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_62_reg_5599">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_63_reg_5614">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_64_reg_5629">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_65_reg_5644">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_66_reg_5659">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_67_reg_5674">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_68_reg_5689">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_69_reg_5704">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_6_reg_4759">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_70_reg_5719">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_71_reg_5734">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_72_reg_5749">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_73_reg_5764">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_74_reg_5779">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_75_reg_5794">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_76_reg_5809">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_77_reg_5824">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_78_reg_5839">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_79_reg_5854">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_7_reg_4774">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_80_reg_5869">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_81_reg_5884">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_82_reg_5899">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_83_reg_5914">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_84_reg_5929">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_85_reg_5944">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_86_reg_5959">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_87_reg_5974">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_88_reg_5989">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_89_reg_6004">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_8_reg_4789">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_90_reg_6019">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_91_reg_6034">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_92_reg_6049">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_93_reg_6064">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_94_reg_6079">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_95_reg_6094">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_96_reg_6109">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_97_reg_6124">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_9_reg_4804">32, 0, 32, 0</column>
+<column name="clusterArray_clusterID_load_reg_4669">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_10_reg_4809">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_11_reg_4824">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_12_reg_4839">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_13_reg_4854">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_14_reg_4869">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_15_reg_4884">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_16_reg_4899">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_17_reg_4914">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_18_reg_4929">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_19_reg_4944">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_1_reg_4674">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_20_reg_4959">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_21_reg_4974">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_22_reg_4989">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_23_reg_5004">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_24_reg_5019">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_25_reg_5034">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_26_reg_5049">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_27_reg_5064">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_28_reg_5079">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_29_reg_5094">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_2_reg_4689">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_30_reg_5109">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_31_reg_5124">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_32_reg_5139">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_33_reg_5154">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_34_reg_5169">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_35_reg_5184">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_36_reg_5199">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_37_reg_5214">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_38_reg_5229">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_39_reg_5244">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_3_reg_4704">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_40_reg_5259">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_41_reg_5274">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_42_reg_5289">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_43_reg_5304">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_44_reg_5319">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_45_reg_5334">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_46_reg_5349">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_47_reg_5364">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_48_reg_5379">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_49_reg_5394">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_4_reg_4719">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_50_reg_5409">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_51_reg_5424">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_52_reg_5439">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_53_reg_5454">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_54_reg_5469">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_55_reg_5484">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_56_reg_5499">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_57_reg_5514">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_58_reg_5529">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_59_reg_5544">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_5_reg_4734">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_60_reg_5559">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_61_reg_5574">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_62_reg_5589">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_63_reg_5604">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_64_reg_5619">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_65_reg_5634">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_66_reg_5649">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_67_reg_5664">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_68_reg_5679">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_69_reg_5694">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_6_reg_4749">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_70_reg_5709">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_71_reg_5724">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_72_reg_5739">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_73_reg_5754">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_74_reg_5769">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_75_reg_5784">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_76_reg_5799">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_77_reg_5814">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_78_reg_5829">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_79_reg_5844">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_7_reg_4764">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_80_reg_5859">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_81_reg_5874">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_82_reg_5889">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_83_reg_5904">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_84_reg_5919">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_85_reg_5934">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_86_reg_5949">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_87_reg_5964">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_88_reg_5979">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_89_reg_5994">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_8_reg_4779">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_90_reg_6009">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_91_reg_6024">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_92_reg_6039">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_93_reg_6054">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_94_reg_6069">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_95_reg_6084">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_96_reg_6099">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_97_reg_6114">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_9_reg_4794">32, 0, 32, 0</column>
+<column name="clusterArray_x_load_reg_4659">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_10_reg_4814">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_11_reg_4829">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_12_reg_4844">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_13_reg_4859">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_14_reg_4874">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_15_reg_4889">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_16_reg_4904">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_17_reg_4919">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_18_reg_4934">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_19_reg_4949">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_1_reg_4679">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_20_reg_4964">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_21_reg_4979">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_22_reg_4994">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_23_reg_5009">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_24_reg_5024">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_25_reg_5039">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_26_reg_5054">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_27_reg_5069">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_28_reg_5084">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_29_reg_5099">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_2_reg_4694">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_30_reg_5114">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_31_reg_5129">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_32_reg_5144">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_33_reg_5159">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_34_reg_5174">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_35_reg_5189">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_36_reg_5204">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_37_reg_5219">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_38_reg_5234">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_39_reg_5249">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_3_reg_4709">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_40_reg_5264">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_41_reg_5279">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_42_reg_5294">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_43_reg_5309">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_44_reg_5324">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_45_reg_5339">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_46_reg_5354">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_47_reg_5369">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_48_reg_5384">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_49_reg_5399">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_4_reg_4724">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_50_reg_5414">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_51_reg_5429">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_52_reg_5444">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_53_reg_5459">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_54_reg_5474">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_55_reg_5489">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_56_reg_5504">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_57_reg_5519">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_58_reg_5534">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_59_reg_5549">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_5_reg_4739">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_60_reg_5564">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_61_reg_5579">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_62_reg_5594">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_63_reg_5609">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_64_reg_5624">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_65_reg_5639">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_66_reg_5654">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_67_reg_5669">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_68_reg_5684">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_69_reg_5699">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_6_reg_4754">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_70_reg_5714">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_71_reg_5729">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_72_reg_5744">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_73_reg_5759">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_74_reg_5774">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_75_reg_5789">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_76_reg_5804">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_77_reg_5819">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_78_reg_5834">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_79_reg_5849">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_7_reg_4769">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_80_reg_5864">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_81_reg_5879">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_82_reg_5894">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_83_reg_5909">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_84_reg_5924">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_85_reg_5939">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_86_reg_5954">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_87_reg_5969">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_88_reg_5984">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_89_reg_5999">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_8_reg_4784">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_90_reg_6014">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_91_reg_6029">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_92_reg_6044">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_93_reg_6059">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_94_reg_6074">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_95_reg_6089">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_96_reg_6104">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_97_reg_6119">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_9_reg_4799">32, 0, 32, 0</column>
+<column name="clusterArray_y_load_reg_4664">32, 0, 32, 0</column>
+<column name="clusterGrid_clusterID_addr_reg_4637">7, 0, 7, 0</column>
+<column name="clusterID_2_reg_4649">32, 0, 32, 0</column>
+<column name="clusterID_fu_284">32, 0, 32, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_1_fu_2520_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_2_fu_2530_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_4_fu_2538_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_168_3_fu_2545_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_naive_findClustersHLS1_Pipeline_VITIS_LOOP_199_5_VITIS_LOOP_200_6_fu_2559_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_fu_272">4, 0, 4, 0</column>
+<column name="indvar_flatten_fu_276">7, 0, 7, 0</column>
+<column name="j_fu_268">4, 0, 4, 0</column>
+<column name="or_ln159_reg_4642">1, 0, 1, 0</column>
+<column name="select_ln151_1_reg_4620">4, 0, 4, 0</column>
+<column name="select_ln151_reg_4614">4, 0, 4, 0</column>
+<column name="stackIndex_1_fu_280">32, 0, 32, 0</column>
+<column name="stackIndex_reg_4654">32, 0, 32, 0</column>
+<column name="zext_ln159_2_reg_4626">7, 0, 64, 57</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="ap_return">out, 9600, ap_ctrl_hs, naive_findClustersHLS1, return value</column>
+<column name="grid_address0">out, 7, ap_memory, grid, array</column>
+<column name="grid_ce0">out, 1, ap_memory, grid, array</column>
+<column name="grid_q0">in, 32, ap_memory, grid, array</column>
+<column name="grid_address1">out, 7, ap_memory, grid, array</column>
+<column name="grid_ce1">out, 1, ap_memory, grid, array</column>
+<column name="grid_q1">in, 32, ap_memory, grid, array</column>
+<column name="debug">in, 1, ap_none, debug, scalar</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,109 @@
+{
+  "0": {
+    "basicblocks": 48,
+    "calls": "5 5 8 8 7 6 9",
+    "file": "cluster.cpp",
+    "fileloc": 134,
+    "instructions": 1198,
+    "loads": {
+      "G": 2,
+      "L": 320,
+      "T": 2
+    },
+    "name": "naive_findClustersHLS1",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 1250
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "array",
+    "fileloc": 55,
+    "instructions": 2,
+    "name": "_S_ref",
+    "total_instructions": 2
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "cluster.hpp",
+    "fileloc": 37,
+    "instructions": 7,
+    "name": "Point",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 7
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "array",
+    "fileloc": 55,
+    "instructions": 2,
+    "name": "_S_ref",
+    "total_instructions": 2
+  },
+  "4": {
+    "basicblocks": 4,
+    "calls": "2",
+    "file": "array",
+    "fileloc": 94,
+    "instructions": 10,
+    "name": "array",
+    "total_instructions": 17
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "cluster.hpp",
+    "fileloc": 37,
+    "instructions": 4,
+    "name": "Point",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 4
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "3",
+    "file": "array",
+    "fileloc": 185,
+    "instructions": 2,
+    "name": "operator[]",
+    "total_instructions": 4
+  },
+  "7": {
+    "basicblocks": 4,
+    "calls": "4",
+    "file": "array",
+    "fileloc": 94,
+    "instructions": 10,
+    "name": "array",
+    "total_instructions": 27
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "cluster.hpp",
+    "fileloc": 38,
+    "instructions": 4,
+    "name": "Point",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 4
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "array",
+    "fileloc": 185,
+    "instructions": 3,
+    "name": "operator[]",
+    "total_instructions": 5
+  }
+}

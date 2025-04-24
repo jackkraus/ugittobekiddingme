@@ -1,0 +1,48 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5531" msg_severity="WARNING" msg_loc="cluster.cpp:217:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5531" msg_severity="WARNING" msg_loc="cluster.cpp:218:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Users/abelo/vitis_workspace/clustering/clustering/solution1/csynth.tcl:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=naive_findClustersHLS2" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:217:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=clusterGrid1 core=RAM_2P_BRAM" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:218:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=clusterGrid2 core=RAM_2P_BRAM" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:219:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=upperLeftNeighborXCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:220:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=upperLeftNeighborYCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:221:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=lowerRightNeighborXCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:222:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=lowerRightNeighborYCoords complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:230:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=11" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:255:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=11" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cluster.cpp:283:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="naive_findClustersHLS2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="cluster.cpp:212:0" msg_body="Inlining function 'Point::Point(int, int, int)' into 'naive_findClustersHLS2(ap_int&lt;1&gt; (*) [12], Point (*) [12])'">
+        <args Callee="Point::Point(int, int, int)" Callee-DebugLoc="File ./cluster.hpp Line 38 Column 0" Caller="naive_findClustersHLS2(ap_int&lt;1&gt; (*) [12], Point (*) [12])" Caller-DebugLoc="File cluster.cpp Line 212 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="cluster.cpp:212:0" msg_body="Aggregating bram variable 'pointsGrid' with compact=bit mode in 96-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="96" HwTyName="bram" Name="pointsGrid"/>
+    </msg>
+    <msg msg_groups="PRAGMA_AGGREGATE" msg_id="214-241" msg_severity="INFO" msg_loc="cluster.cpp:212:0" msg_body="Aggregating bram variable 'grid' with compact=bit mode in 1-bits">
+        <args AggregateTypeName="compact=bit" Bitwidth="1" HwTyName="bram" Name="grid"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

@@ -1,0 +1,68 @@
+{
+    "1": {
+        "name": "naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner",
+        "file": "",
+        "fileloc": "0",
+        "instructions": "90",
+        "total_instructions": "90",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "9"
+        },
+        "stores": {
+            "L": "9"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "naive_findClustersHLS2",
+        "file": "",
+        "fileloc": "0",
+        "instructions": "17",
+        "total_instructions": "270",
+        "calls": "1 2 3",
+        "basicblocks": "1",
+        "stores": {
+            "L": "2"
+        }
+    },
+    "2": {
+        "name": "naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner",
+        "file": "",
+        "fileloc": "0",
+        "instructions": "108",
+        "total_instructions": "108",
+        "calls": "",
+        "basicblocks": "6",
+        "loads": {
+            "L": "13"
+        },
+        "stores": {
+            "L": "11"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner",
+        "file": "",
+        "fileloc": "0",
+        "instructions": "55",
+        "total_instructions": "55",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "6"
+        },
+        "stores": {
+            "L": "7"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

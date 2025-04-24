@@ -1,0 +1,38 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../main.cpp in debug mode
+csim.mk:78: recipe for target 'obj/main.o' failed
+In file included from E:/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from E:/Vitis_HLS/2023.1/include/hls_fpo.h:143,
+                 from E:/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from E:/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
+                 from E:/Vitis_HLS/2023.1/include/ap_int.h:10,
+                 from ../../../../cluster.hpp:13,
+                 from ../../../../main.cpp:7:
+E:/Vitis_HLS/2023.1/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from E:/Vitis_HLS/2023.1/include/hls_fpo.h:143:0,
+                 from E:/Vitis_HLS/2023.1/include/etc/hls_half_fpo.h:18,
+                 from E:/Vitis_HLS/2023.1/include/hls_half.h:25,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_private.h:52,
+                 from E:/Vitis_HLS/2023.1/include/etc/ap_common.h:666,
+                 from E:/Vitis_HLS/2023.1/include/ap_int.h:10,
+                 from ../../../../cluster.hpp:13,
+                 from ../../../../main.cpp:7:
+E:/Vitis_HLS/2023.1/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+../../../../main.cpp: In function 'int main(int, char**)':
+../../../../main.cpp:54:49: error: invalid initialization of reference of type 'std::array<std::array<ap_int<1>, 12ull>, 12ull>&' from expression of type 'bit_t [12][12] {aka ap_int<1> [12][12]}'
+     naive_findClustersHLS2(paddedGrid, clusters2);
+                                                 ^
+In file included from ../../../../main.cpp:7:0:
+../../../../cluster.hpp:47:53: note: in passing argument 1 of 'std::array<std::array<Point, 12ull>, 12ull> naive_findClustersHLS2(std::array<std::array<ap_int<1>, 12ull>, 12ull>&)'
+ std::array<std::array<Point, NCOLS + 2>, NROWS + 2> naive_findClustersHLS2(std::array<std::array<bit_t, NCOLS + 2>, NROWS + 2>& grid);
+                                                     ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [obj/main.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

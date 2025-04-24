@@ -1,0 +1,19 @@
+{
+  "0": {
+    "basicblocks": 35,
+    "calls": "",
+    "file": "cluster.cpp",
+    "fileloc": 134,
+    "instructions": 1795,
+    "loads": {
+      "G": 2,
+      "L": 307,
+      "T": 2
+    },
+    "name": "naive_findClustersHLS1",
+    "stores": {
+      "L": 21
+    },
+    "total_instructions": 1795
+  }
+}

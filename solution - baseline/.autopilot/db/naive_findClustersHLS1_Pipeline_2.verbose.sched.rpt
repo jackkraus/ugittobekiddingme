@@ -1,0 +1,132 @@
+
+
+================================================================
+== Vitis HLS Report for 'naive_findClustersHLS1_Pipeline_2'
+================================================================
+* Date:           Thu Apr 24 10:01:40 2025
+
+* Version:        2023.1 (Build 3854077 on May  4 2023)
+* Project:        clustering
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  1.316 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      101|      101|  1.010 us|  1.010 us|  101|  101|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |       99|       99|         1|          1|          1|   100|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.31>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%arrayinit_curidx = alloca i32 1"   --->   Operation 4 'alloca' 'arrayinit_curidx' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.46ns)   --->   "%store_ln0 = store i7 0, i7 %arrayinit_curidx"   --->   Operation 5 'store' 'store_ln0' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%br_ln0 = br void %arrayinit.body"   --->   Operation 6 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%arrayinit_curidx_load = load i7 %arrayinit_curidx" [cluster.cpp:147]   --->   Operation 7 'load' 'arrayinit_curidx_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%arrayinit_curidx_cast = zext i7 %arrayinit_curidx_load" [cluster.cpp:147]   --->   Operation 8 'zext' 'arrayinit_curidx_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 9 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%speclooptripcount_ln147 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 100, i64 100, i64 100" [cluster.cpp:147]   --->   Operation 10 'speclooptripcount' 'speclooptripcount_ln147' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%this_x = getelementptr i32 %stack_x, i64 0, i64 %arrayinit_curidx_cast" [cluster.cpp:147]   --->   Operation 11 'getelementptr' 'this_x' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%this_y = getelementptr i32 %stack_y, i64 0, i64 %arrayinit_curidx_cast" [cluster.cpp:147]   --->   Operation 12 'getelementptr' 'this_y' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.85ns)   --->   "%add_ln147 = add i7 %arrayinit_curidx_load, i7 1" [cluster.cpp:147]   --->   Operation 13 'add' 'add_ln147' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (1.29ns)   --->   "%store_ln37 = store i32 0, i7 %this_x" [./cluster.hpp:37->cluster.cpp:147]   --->   Operation 14 'store' 'store_ln37' <Predicate = true> <Delay = 1.29> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.29> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_1 : Operation 15 [1/1] (1.29ns)   --->   "%store_ln37 = store i32 0, i7 %this_y" [./cluster.hpp:37->cluster.cpp:147]   --->   Operation 15 'store' 'store_ln37' <Predicate = true> <Delay = 1.29> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.29> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_1 : Operation 16 [1/1] (0.85ns)   --->   "%icmp_ln147 = icmp_eq  i7 %arrayinit_curidx_load, i7 99" [cluster.cpp:147]   --->   Operation 16 'icmp' 'icmp_ln147' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.46ns)   --->   "%store_ln147 = store i7 %add_ln147, i7 %arrayinit_curidx" [cluster.cpp:147]   --->   Operation 17 'store' 'store_ln147' <Predicate = true> <Delay = 0.46>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln147 = br i1 %icmp_ln147, void %arrayinit.body, void %for.body12.preheader.exitStub" [cluster.cpp:147]   --->   Operation 18 'br' 'br_ln147' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln147)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.316ns
+The critical path consists of the following:
+	'alloca' operation ('arrayinit_curidx') [3]  (0.000 ns)
+	'load' operation ('arrayinit_curidx_load', cluster.cpp:147) on local variable 'arrayinit_curidx' [7]  (0.000 ns)
+	'add' operation ('add_ln147', cluster.cpp:147) [13]  (0.856 ns)
+	'store' operation ('store_ln147', cluster.cpp:147) of variable 'add_ln147', cluster.cpp:147 on local variable 'arrayinit_curidx' [17]  (0.460 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,170 @@
+
+
+================================================================
+== Vitis HLS Report for 'naive_findClustersHLS2'
+================================================================
+* Date:           Thu Apr 24 10:03:27 2025
+
+* Version:        2023.1 (Build 3854077 on May  4 2023)
+* Project:        clustering
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.002 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     1656|     1656|  16.560 us|  16.560 us|  1657|  1657|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.29>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%clusterGrid1 = alloca i64 1" [cluster.cpp:214]   --->   Operation 8 'alloca' 'clusterGrid1' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.29> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 144> <RAM>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%clusterGrid1_addr = getelementptr i16 %clusterGrid1, i64 0, i64 0" [cluster.cpp:214]   --->   Operation 9 'getelementptr' 'clusterGrid1_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%clusterGrid2 = alloca i64 1" [cluster.cpp:215]   --->   Operation 10 'alloca' 'clusterGrid2' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.29> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 144> <RAM>
+ST_1 : Operation 11 [1/1] (1.29ns)   --->   "%store_ln214 = store i16 0, i8 %clusterGrid1_addr" [cluster.cpp:214]   --->   Operation 11 'store' 'store_ln214' <Predicate = true> <Delay = 1.29> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.29> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 144> <RAM>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 12 [2/2] (0.00ns)   --->   "%call_ln0 = call void @naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner, i1 %grid, i16 %clusterGrid1"   --->   Operation 12 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.29>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%clusterGrid2_addr = getelementptr i16 %clusterGrid2, i64 0, i64 0" [cluster.cpp:215]   --->   Operation 13 'getelementptr' 'clusterGrid2_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (1.29ns)   --->   "%store_ln215 = store i16 0, i8 %clusterGrid2_addr" [cluster.cpp:215]   --->   Operation 14 'store' 'store_ln215' <Predicate = true> <Delay = 1.29> <CoreInst = "RAM_2P_BRAM">   --->   Core 94 'RAM_2P_BRAM' <Latency = 1> <II = 1> <Delay = 1.29> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 144> <RAM>
+ST_3 : Operation 15 [1/2] (0.00ns)   --->   "%call_ln0 = call void @naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner, i1 %grid, i16 %clusterGrid1"   --->   Operation 15 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 16 [2/2] (0.00ns)   --->   "%call_ln0 = call void @naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, i1 %grid, i16 %clusterGrid1, i16 %clusterGrid2"   --->   Operation 16 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 17 [1/2] (0.00ns)   --->   "%call_ln0 = call void @naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, i1 %grid, i16 %clusterGrid1, i16 %clusterGrid2"   --->   Operation 17 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln0 = call void @naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner, i1 %grid, i96 %pointsGrid, i16 %clusterGrid1, i16 %clusterGrid2"   --->   Operation 18 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 19 [1/1] (0.00ns)   --->   "%spectopmodule_ln212 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [cluster.cpp:212]   --->   Operation 19 'spectopmodule' 'spectopmodule_ln212' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %grid, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 21 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %grid"   --->   Operation 21 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %pointsGrid, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i96 %pointsGrid"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 24 [1/1] (0.00ns)   --->   "%specmemcore_ln217 = specmemcore void @_ssdm_op_SpecMemCore, i16 %clusterGrid1, i64 666, i64 22, i64 18446744073709551615" [cluster.cpp:217]   --->   Operation 24 'specmemcore' 'specmemcore_ln217' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 25 [1/1] (0.00ns)   --->   "%specmemcore_ln218 = specmemcore void @_ssdm_op_SpecMemCore, i16 %clusterGrid2, i64 666, i64 22, i64 18446744073709551615" [cluster.cpp:218]   --->   Operation 25 'specmemcore' 'specmemcore_ln218' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 26 [1/2] (0.00ns)   --->   "%call_ln0 = call void @naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner, i1 %grid, i96 %pointsGrid, i16 %clusterGrid1, i16 %clusterGrid2"   --->   Operation 26 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 27 [1/1] (0.00ns)   --->   "%ret_ln292 = ret" [cluster.cpp:292]   --->   Operation 27 'ret' 'ret_ln292' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.297ns
+The critical path consists of the following:
+	'alloca' operation ('clusterGrid1', cluster.cpp:214) [8]  (0.000 ns)
+	'getelementptr' operation ('clusterGrid1_addr', cluster.cpp:214) [9]  (0.000 ns)
+	'store' operation ('store_ln214', cluster.cpp:214) of constant 0 on array 'clusterGrid1', cluster.cpp:214 [12]  (1.297 ns)
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 1.297ns
+The critical path consists of the following:
+	'getelementptr' operation ('clusterGrid2_addr', cluster.cpp:215) [11]  (0.000 ns)
+	'store' operation ('store_ln215', cluster.cpp:215) of constant 0 on array 'clusterGrid2', cluster.cpp:215 [13]  (1.297 ns)
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

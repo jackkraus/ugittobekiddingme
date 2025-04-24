@@ -1,0 +1,45 @@
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29699:5: warning: Added loop label VITIS_LOOP_5_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < grid.size(); i++) {
+    ^~~
+    VITIS_LOOP_5_1: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29699:5: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29700:9: warning: Added loop label VITIS_LOOP_6_2:   [xilinx-label-all-loops]
+        for (size_t j = 0; j < grid[0].size(); j++) {
+        ^~~
+        VITIS_LOOP_6_2: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29700:9: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29726:5: warning: Added loop label VITIS_LOOP_32_1:   [xilinx-label-all-loops]
+    for(int i = 0; i < hitnum; i++){
+    ^~~
+    VITIS_LOOP_32_1: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29726:5: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29796:5: warning: Added loop label VITIS_LOOP_102_1:   [xilinx-label-all-loops]
+    for(size_t i = 0; i < nrow; i++){
+    ^~~
+    VITIS_LOOP_102_1: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29796:5: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29797:9: warning: Added loop label VITIS_LOOP_103_2:   [xilinx-label-all-loops]
+        for(size_t j = 0; j < ncol; j++){
+        ^~~
+        VITIS_LOOP_103_2: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29797:9: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29803:13: warning: Added loop label VITIS_LOOP_109_3:   [xilinx-label-all-loops]
+            for(unsigned int b = 0; b < 8; b++){
+            ^~~
+            VITIS_LOOP_109_3: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29803:13: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29858:9: warning: Added loop label VITIS_LOOP_164_4:   [xilinx-label-all-loops]
+        for (unsigned int i = 0; i < nrow; i++ ){
+        ^~~
+        VITIS_LOOP_164_4: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29858:9: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29859:13: warning: Added loop label VITIS_LOOP_165_5:   [xilinx-label-all-loops]
+            for (unsigned int j = 0; j < ncol; j++ ){
+            ^~~
+            VITIS_LOOP_165_5: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29859:13: note: FIX-IT applied suggested code changes
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29890:5: warning: Added loop label VITIS_LOOP_196_1:   [xilinx-label-all-loops]
+    for(int a = 0; a < clustnum; a++){
+    ^~~
+    VITIS_LOOP_196_1: 
+C:\Users\abelo\vitis_workspace\clustering\clustering\solution1\.autopilot\db\generate.pp.0.cpp:29890:5: note: FIX-IT applied suggested code changes

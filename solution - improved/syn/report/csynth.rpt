@@ -1,0 +1,174 @@
+
+
+================================================================
+== Synthesis Summary Report of 'naive_findClustersHLS2'
+================================================================
++ General Information: 
+    * Date:           Thu Apr 24 10:03:29 2025
+    * Version:        2023.1 (Build 3854077 on May  4 2023)
+    * Project:        clustering
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu11p-flga2577-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |                              Modules                              | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |    |           |            |     |
+    |                              & Loops                              | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |     LUT    | URAM|
+    +-------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+    |+ naive_findClustersHLS2                                           |     -|  1.30|     1656|  1.656e+04|         -|     1657|     -|        no|  2 (~0%)|   -|  368 (~0%)|  1746 (~0%)|    -|
+    | + naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner        |     -|  1.30|      402|  4.020e+03|         -|      402|     -|        no|        -|   -|  127 (~0%)|   609 (~0%)|    -|
+    |  o FirstPass_FirstPassInner                                       |     -|  7.30|      400|  4.000e+03|         4|        4|   100|       yes|        -|   -|          -|           -|    -|
+    | + naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner      |     -|  2.71|     1102|  1.102e+04|         -|     1102|     -|        no|        -|   -|  196 (~0%)|   578 (~0%)|    -|
+    |  o SecondPass_SecondPassInner                                     |     -|  7.30|     1100|  1.100e+04|        11|       11|   100|       yes|        -|   -|          -|           -|    -|
+    | + naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner  |     -|  3.15|      146|  1.460e+03|         -|      146|     -|        no|        -|   -|   35 (~0%)|   303 (~0%)|    -|
+    |  o CreateResult_CreateResultInner                                 |     -|  7.30|      144|  1.440e+03|         2|        1|   144|       yes|        -|   -|          -|           -|    -|
+    +-------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++---------------------+-----------+----------+
+| Port                | Direction | Bitwidth |
++---------------------+-----------+----------+
+| grid_address0       | out       | 8        |
+| grid_q0             | in        | 1        |
+| pointsGrid_address0 | out       | 8        |
+| pointsGrid_d0       | out       | 96       |
++---------------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------+-----------+------------+
+| Argument   | Direction | Datatype   |
++------------+-----------+------------+
+| grid       | in        | ap_int<1>* |
+| pointsGrid | inout     | Point*     |
++------------+-----------+------------+
+
+* SW-to-HW Mapping
++------------+---------------------+---------+----------+
+| Argument   | HW Interface        | HW Type | HW Usage |
++------------+---------------------+---------+----------+
+| grid       | grid_address0       | port    | offset   |
+| grid       | grid_ce0            | port    |          |
+| grid       | grid_q0             | port    |          |
+| pointsGrid | pointsGrid_address0 | port    | offset   |
+| pointsGrid | pointsGrid_ce0      | port    |          |
+| pointsGrid | pointsGrid_we0      | port    |          |
+| pointsGrid | pointsGrid_d0       | port    |          |
++------------+---------------------+---------+----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* All M_AXI Variable Accesses
++--------------+------------+--------------------+-----------+--------------+------------+------------------------------------------------------------------------------+
+| HW Interface | Variable   | Access Location    | Direction | Burst Status | Resolution | Problem                                                                      |
++--------------+------------+--------------------+-----------+--------------+------------+------------------------------------------------------------------------------+
+| m_axi_       | pointsGrid | cluster.cpp:286:34 | write     | Fail         | 214-228    | Alignment is insufficient, current alignment is 4 byte(s) but 16 is required |
+| m_axi_       | pointsGrid | cluster.cpp:288:34 | write     | Fail         | 214-228    | Alignment is insufficient, current alignment is 4 byte(s) but 16 is required |
+| m_axi_       | pointsGrid | cluster.cpp:288:34 | read      | Fail         | 214-228    | Alignment is insufficient, current alignment is 4 byte(s) but 16 is required |
++--------------+------------+--------------------+-----------+--------------+------------+------------------------------------------------------------------------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2023.1;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------------------+-----+--------+-------------------------+-----+--------+---------+
+| Name                                                              | DSP | Pragma | Variable                | Op  | Impl   | Latency |
++-------------------------------------------------------------------+-----+--------+-------------------------+-----+--------+---------+
+| + naive_findClustersHLS2                                          | 0   |        |                         |     |        |         |
+|  + naive_findClustersHLS2_Pipeline_FirstPass_FirstPassInner       | 0   |        |                         |     |        |         |
+|    add_ln227_1_fu_180_p2                                          | -   |        | add_ln227_1             | add | fabric | 0       |
+|    add_ln227_fu_192_p2                                            | -   |        | add_ln227               | add | fabric | 0       |
+|    sub_ln231_fu_240_p2                                            | -   |        | sub_ln231               | sub | fabric | 0       |
+|    empty_fu_246_p2                                                | -   |        | empty                   | add | fabric | 0       |
+|    sub_ln234_fu_294_p2                                            | -   |        | sub_ln234               | sub | fabric | 0       |
+|    add_ln231_fu_264_p2                                            | -   |        | add_ln231               | add | fabric | 0       |
+|    add_ln235_fu_300_p2                                            | -   |        | add_ln235               | add | fabric | 0       |
+|    add_ln229_fu_310_p2                                            | -   |        | add_ln229               | add | fabric | 0       |
+|    add_ln236_fu_319_p2                                            | -   |        | add_ln236               | add | fabric | 0       |
+|    add_ln233_fu_330_p2                                            | -   |        | add_ln233               | add | fabric | 0       |
+|    add_ln233_1_fu_339_p2                                          | -   |        | add_ln233_1             | add | fabric | 0       |
+|    add_ln234_fu_349_p2                                            | -   |        | add_ln234               | add | fabric | 0       |
+|    maxClusterID_fu_447_p2                                         | -   |        | maxClusterID            | add | fabric | 0       |
+|  + naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner     | 0   |        |                         |     |        |         |
+|    add_ln252_fu_251_p2                                            | -   |        | add_ln252               | add | fabric | 0       |
+|    indvars_iv_next24916_fu_277_p2                                 | -   |        | indvars_iv_next24916    | add | fabric | 0       |
+|    sub_ln256_fu_311_p2                                            | -   |        | sub_ln256               | sub | fabric | 0       |
+|    indvars_iv_next249_mid1_fu_317_p2                              | -   |        | indvars_iv_next249_mid1 | add | fabric | 0       |
+|    sub_ln260_fu_366_p2                                            | -   |        | sub_ln260               | sub | fabric | 0       |
+|    add_ln256_fu_335_p2                                            | -   |        | add_ln256               | add | fabric | 0       |
+|    add_ln261_fu_372_p2                                            | -   |        | add_ln261               | add | fabric | 0       |
+|    add_ln254_fu_383_p2                                            | -   |        | add_ln254               | add | fabric | 0       |
+|    add_ln259_fu_392_p2                                            | -   |        | add_ln259               | add | fabric | 0       |
+|    add_ln260_fu_403_p2                                            | -   |        | add_ln260               | add | fabric | 0       |
+|    add_ln262_fu_415_p2                                            | -   |        | add_ln262               | add | fabric | 0       |
+|    add_ln262_1_fu_424_p2                                          | -   |        | add_ln262_1             | add | fabric | 0       |
+|    add_ln259_1_fu_457_p2                                          | -   |        | add_ln259_1             | add | fabric | 0       |
+|  + naive_findClustersHLS2_Pipeline_CreateResult_CreateResultInner | 0   |        |                         |     |        |         |
+|    add_ln280_1_fu_154_p2                                          | -   |        | add_ln280_1             | add | fabric | 0       |
+|    add_ln280_fu_166_p2                                            | -   |        | add_ln280               | add | fabric | 0       |
+|    add_ln282_fu_237_p2                                            | -   |        | add_ln282               | add | fabric | 0       |
++-------------------------------------------------------------------+-----+--------+-------------------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------------------+------+------+--------+--------------+---------+------+---------+
+| Name                     | BRAM | URAM | Pragma | Variable     | Storage | Impl | Latency |
++--------------------------+------+------+--------+--------------+---------+------+---------+
+| + naive_findClustersHLS2 | 2    | 0    |        |              |         |      |         |
+|   clusterGrid1_U         | 1    | -    | yes    | clusterGrid1 | ram_2p  | bram | 1       |
+|   clusterGrid2_U         | 1    | -    | yes    | clusterGrid2 | ram_2p  | bram | 1       |
++--------------------------+------+------+--------+--------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+----------------------------------------+---------------------------------------------------------+----------------------------------------------------------------------------+
+| Type     | Options                                | Location                                                | Messages                                                                   |
++----------+----------------------------------------+---------------------------------------------------------+----------------------------------------------------------------------------+
+| resource | variable=clusterGrid1 core=RAM_2P_BRAM | cluster.cpp:217 in naive_findclustershls2, clusterGrid1 | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead |
+| resource | variable=clusterGrid2 core=RAM_2P_BRAM | cluster.cpp:218 in naive_findclustershls2, clusterGrid2 | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead |
++----------+----------------------------------------+---------------------------------------------------------+----------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+---------------------------------------------------+----------------------------------------------------------------------+
+| Type            | Options                                           | Location                                                             |
++-----------------+---------------------------------------------------+----------------------------------------------------------------------+
+| array_partition | variable=upperLeftNeighborXCoords complete dim=1  | cluster.cpp:219 in naive_findclustershls2, upperLeftNeighborXCoords  |
+| array_partition | variable=upperLeftNeighborYCoords complete dim=1  | cluster.cpp:220 in naive_findclustershls2, upperLeftNeighborYCoords  |
+| array_partition | variable=lowerRightNeighborXCoords complete dim=1 | cluster.cpp:221 in naive_findclustershls2, lowerRightNeighborXCoords |
+| array_partition | variable=lowerRightNeighborYCoords complete dim=1 | cluster.cpp:222 in naive_findclustershls2, lowerRightNeighborYCoords |
+| pipeline        | II=11                                             | cluster.cpp:230 in naive_findclustershls2                            |
+| pipeline        | II=11                                             | cluster.cpp:255 in naive_findclustershls2                            |
+| pipeline        | II=1                                              | cluster.cpp:283 in naive_findclustershls2                            |
++-----------------+---------------------------------------------------+----------------------------------------------------------------------+
+
+

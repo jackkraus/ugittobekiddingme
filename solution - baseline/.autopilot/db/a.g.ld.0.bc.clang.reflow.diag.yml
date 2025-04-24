@@ -1,0 +1,168 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                   Line: 94, Column: 0 }
+Function:        _ZNSt5arrayI5PointLm10EEC2Ev
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'Point::Point()'
+    DebugLoc:        { File: ./cluster.hpp, Line: 37, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'std::array<Point, 10ul>::array()'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 94, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                   Line: 94, Column: 0 }
+Function:        _ZNSt5arrayIS_I5PointLm10EELm10EEC2Ev
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'std::array<Point, 10ul>::array()'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 94, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'std::array<std::array<Point, 10ul>, 10ul>::array()'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 94, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                   Line: 186, Column: 0 }
+Function:        _ZNSt5arrayIS_I5PointLm10EELm10EEixEm
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'std::__array_traits<std::array<Point, 10ul>, 10ul>::_S_ref(std::array<Point, 10ul> const (&) [10], unsigned long)'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 56, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'std::array<std::array<Point, 10ul>, 10ul>::operator[](unsigned long)'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 186, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                   Line: 186, Column: 0 }
+Function:        _ZNSt5arrayI5PointLm10EEixEm
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'std::__array_traits<Point, 10ul>::_S_ref(Point const (&) [10], unsigned long)'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 56, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'std::array<Point, 10ul>::operator[](unsigned long)'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 186, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'Point::Point() (.7)'
+    DebugLoc:        { File: ./cluster.hpp, Line: 37, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'naive_findClustersHLS1(int (*) [10], bool)'
+    DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'Point::Point(int, int, int)'
+    DebugLoc:        { File: ./cluster.hpp, Line: 38, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'naive_findClustersHLS1(int (*) [10], bool)'
+    DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'std::array<std::array<Point, 10ul>, 10ul>::array()'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 94, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'naive_findClustersHLS1(int (*) [10], bool)'
+    DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'std::array<std::array<Point, 10ul>, 10ul>::operator[](unsigned long)'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 186, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'naive_findClustersHLS1(int (*) [10], bool)'
+    DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'std::array<Point, 10ul>::operator[](unsigned long)'
+    DebugLoc:        { File: 'E:/Vitis_HLS/2023.1/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\array', 
+                       Line: 186, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'naive_findClustersHLS1(int (*) [10], bool)'
+    DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: cluster.cpp, Line: 168, Column: 35 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_168_3
+  - String:          ' '
+  - LoopLoc:         'cluster.cpp:168:35'
+  - String:          ' '
+  - Function:        'naive_findClustersHLS1(int (*) [10], bool)'
+    DebugLoc:        { File: cluster.cpp, Line: 134, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: cluster.cpp, Line: 168, Column: 35 }
+Function:        _Z22naive_findClustersHLS1PA10_ib
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_168_3
+  - String:          '''('
+  - LoopLoc:         'cluster.cpp:168:35'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...

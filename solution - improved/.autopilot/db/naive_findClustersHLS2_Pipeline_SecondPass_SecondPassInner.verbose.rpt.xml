@@ -1,0 +1,194 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner'" level="0">
+<item name = "Date">Thu Apr 24 10:03:28 2025
+</item>
+<item name = "Version">2023.1 (Build 3854077 on May  4 2023)</item>
+<item name = "Project">clustering</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu11p-flga2577-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 4.586 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1102, 1102, 11.020 us, 11.020 us, 1102, 1102, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- SecondPass_SecondPassInner">1100, 1100, 11, 11, 11, 100, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 348, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, -, -, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 230, -</column>
+<column name="Register">-, -, 196, -, -</column>
+<specialColumn name="Available SLR">1344, 3072, 864000, 432000, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">4032, 9216, 2592000, 1296000, 960</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln252_fu_251_p2">+, 0, 0, 14, 7, 1</column>
+<column name="add_ln254_fu_383_p2">+, 0, 0, 12, 4, 1</column>
+<column name="add_ln256_fu_335_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln259_1_fu_457_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln259_fu_392_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln260_fu_403_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln261_fu_372_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln262_1_fu_424_p2">+, 0, 0, 15, 8, 8</column>
+<column name="add_ln262_fu_415_p2">+, 0, 0, 12, 4, 2</column>
+<column name="indvars_iv_next24916_fu_277_p2">+, 0, 0, 12, 4, 1</column>
+<column name="indvars_iv_next249_mid1_fu_317_p2">+, 0, 0, 12, 4, 2</column>
+<column name="sub_ln256_fu_311_p2">-, 0, 0, 15, 8, 8</column>
+<column name="sub_ln260_fu_366_p2">-, 0, 0, 15, 8, 8</column>
+<column name="and_ln264_fu_441_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln265_fu_467_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln266_fu_488_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln267_fu_505_p2">and, 0, 0, 2, 1, 1</column>
+<column name="grp_fu_215_p2">icmp, 0, 0, 23, 16, 1</column>
+<column name="grp_fu_221_p2">icmp, 0, 0, 23, 16, 16</column>
+<column name="icmp_ln252_fu_245_p2">icmp, 0, 0, 14, 7, 6</column>
+<column name="icmp_ln254_fu_263_p2">icmp, 0, 0, 12, 4, 4</column>
+<column name="icmp_ln264_1_fu_435_p2">icmp, 0, 0, 23, 16, 16</column>
+<column name="icmp_ln264_fu_429_p2">icmp, 0, 0, 23, 16, 1</column>
+<column name="select_ln252_1_fu_283_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln252_2_fu_323_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln252_fu_269_p3">select, 0, 0, 4, 1, 1</column>
+<column name="select_ln264_fu_447_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln265_fu_473_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln266_fu_494_p3">select, 0, 0, 8, 1, 8</column>
+<column name="select_ln267_fu_511_p3">select, 0, 0, 8, 1, 8</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">65, 12, 1, 12</column>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_i_load">9, 2, 4, 8</column>
+<column name="ap_sig_allocacmp_indvar_flatten6_load">9, 2, 7, 14</column>
+<column name="ap_sig_allocacmp_j_load">9, 2, 4, 8</column>
+<column name="clusterGrid1_address0">31, 6, 8, 48</column>
+<column name="clusterGrid1_address1">26, 5, 8, 40</column>
+<column name="clusterGrid2_address1">31, 6, 8, 48</column>
+<column name="clusterGrid2_d1">14, 3, 16, 48</column>
+<column name="i_fu_70">9, 2, 4, 8</column>
+<column name="indvar_flatten6_fu_74">9, 2, 7, 14</column>
+<column name="j_fu_66">9, 2, 4, 8</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln252_reg_559">7, 0, 7, 0</column>
+<column name="add_ln254_reg_632">4, 0, 4, 0</column>
+<column name="add_ln259_1_reg_669">8, 0, 8, 0</column>
+<column name="add_ln260_reg_643">8, 0, 8, 0</column>
+<column name="add_ln261_reg_613">8, 0, 8, 0</column>
+<column name="add_ln262_1_reg_663">8, 0, 8, 0</column>
+<column name="ap_CS_fsm">11, 0, 11, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="clusterGrid1_addr_1_reg_618">8, 0, 8, 0</column>
+<column name="clusterGrid1_addr_3_reg_648">8, 0, 8, 0</column>
+<column name="clusterGrid1_addr_reg_598">8, 0, 8, 0</column>
+<column name="clusterGrid2_addr_1_reg_623">8, 0, 8, 0</column>
+<column name="clusterGrid2_addr_2_reg_653">8, 0, 8, 0</column>
+<column name="clusterGrid2_addr_3_reg_658">8, 0, 8, 0</column>
+<column name="clusterGrid2_addr_reg_603">8, 0, 8, 0</column>
+<column name="grid_load_reg_628">1, 0, 1, 0</column>
+<column name="i_fu_70">4, 0, 4, 0</column>
+<column name="icmp_ln252_reg_555">1, 0, 1, 0</column>
+<column name="indvar_flatten6_fu_74">7, 0, 7, 0</column>
+<column name="j_fu_66">4, 0, 4, 0</column>
+<column name="minClusterID_8_reg_714">16, 0, 16, 0</column>
+<column name="select_ln252_1_reg_571">4, 0, 4, 0</column>
+<column name="select_ln252_2_reg_582">4, 0, 4, 0</column>
+<column name="select_ln252_reg_564">4, 0, 4, 0</column>
+<column name="select_ln265_reg_679">8, 0, 8, 0</column>
+<column name="select_ln266_reg_699">8, 0, 8, 0</column>
+<column name="sub_ln256_reg_576">6, 0, 8, 2</column>
+<column name="sub_ln260_reg_608">6, 0, 8, 2</column>
+<column name="zext_ln256_1_reg_588">4, 0, 8, 4</column>
+<column name="zext_ln262_1_reg_689">8, 0, 64, 56</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, naive_findClustersHLS2_Pipeline_SecondPass_SecondPassInner, return value</column>
+<column name="grid_address0">out, 8, ap_memory, grid, array</column>
+<column name="grid_ce0">out, 1, ap_memory, grid, array</column>
+<column name="grid_q0">in, 1, ap_memory, grid, array</column>
+<column name="clusterGrid1_address0">out, 8, ap_memory, clusterGrid1, array</column>
+<column name="clusterGrid1_ce0">out, 1, ap_memory, clusterGrid1, array</column>
+<column name="clusterGrid1_q0">in, 16, ap_memory, clusterGrid1, array</column>
+<column name="clusterGrid1_address1">out, 8, ap_memory, clusterGrid1, array</column>
+<column name="clusterGrid1_ce1">out, 1, ap_memory, clusterGrid1, array</column>
+<column name="clusterGrid1_q1">in, 16, ap_memory, clusterGrid1, array</column>
+<column name="clusterGrid2_address1">out, 8, ap_memory, clusterGrid2, array</column>
+<column name="clusterGrid2_ce1">out, 1, ap_memory, clusterGrid2, array</column>
+<column name="clusterGrid2_we1">out, 1, ap_memory, clusterGrid2, array</column>
+<column name="clusterGrid2_d1">out, 16, ap_memory, clusterGrid2, array</column>
+</table>
+</item>
+</section>
+</profile>

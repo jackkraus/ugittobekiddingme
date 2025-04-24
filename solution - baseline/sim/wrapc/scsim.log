@@ -1,0 +1,4 @@
+   Build using "E:/Vitis_HLS/2023.1/tps/win64/msys64/mingw64/bin/g++"
+   Compiling apatb_naive_findClustersHLS2.cpp
+   Compiling main.cpp_pre.cpp.tb.cpp
+cosim.tv.mk:80: recipe for target 'obj/main.cpp_pre.cpp.tb.o' failed

@@ -1,0 +1,31 @@
+{
+  "0": {
+    "basicblocks": 59,
+    "calls": "1 1",
+    "file": "cluster.cpp",
+    "fileloc": 212,
+    "instructions": 286,
+    "loads": {
+      "L": 17,
+      "T": 3
+    },
+    "name": "naive_findClustersHLS2",
+    "stores": {
+      "L": 10,
+      "T": 6
+    },
+    "total_instructions": 294
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "cluster.hpp",
+    "fileloc": 38,
+    "instructions": 4,
+    "name": "Point",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 4
+  }
+}
