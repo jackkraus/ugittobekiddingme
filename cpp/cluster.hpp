@@ -39,6 +39,7 @@ void writePoints(const std::vector<Point>& points, const std::string& filename);
 std::vector<Point> gridToPoints(const std::vector<std::vector<int>>& grid);
 void printGridWithClusters(int nrows, int ncols, const std::vector<Point>& points);
 
+std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid);
 std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROWS][NCOLS]);
 void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NROWS + 2][NCOLS + 2]);
 

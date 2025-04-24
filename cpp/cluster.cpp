@@ -66,7 +66,7 @@ void printGridWithClusters(int nrows, int ncols, const std::vector<Point>& point
 // Naive clustering
 // Assume that anything directly adjacent to [i, j] is part of the same cluster
 // Actually this is finding all the connected components of a graph
-std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid, bool debug=false) {
+std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid) {
     const int nrows = grid.size();
     const int ncols = grid[0].size();
 
@@ -94,8 +94,6 @@ std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid,
                 std::queue<Point> cluster{};
                 cluster.push(Point(i, j, ++clusterID));
 
-                if (debug) std::cout << "Starting cluster " << clusterID << " at (" << i << ", " << j << ")" << std::endl;
-
                 // Iterate over neighbors
                 // Not ideal for HLS, because we don't know the iterations ahead of time
                 while (!cluster.empty()) {
@@ -118,7 +116,6 @@ std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid,
                             if (grid[adj_i][adj_j] && !visited[adj_i][adj_j]) {
                                 cluster.push(Point(adj_i, adj_j, clusterID));
                                 visited[adj_i][adj_j] = true;
-                                if (debug) std::cout << "Adding point (" << adj_i << ", " << adj_j << ") to cluster " << clusterID << std::endl;
                             }
                         }
                     }
@@ -131,7 +128,7 @@ std::vector<Point> naive_findClusters(const std::vector<std::vector<int>>& grid,
 }
 
 // Minimally optimized version that will synthesize in HLS
-std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROWS][NCOLS], bool debug=false) {
+std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROWS][NCOLS]) {
     // Array of the 8-adjacent spaces for each direction
     // Order matters here!
     const int neighborXCoords[] = {-1,  0,  1, -1,  1, -1,  0,  1};
@@ -159,22 +156,17 @@ std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROW
             if (grid[i][j] && !clusterGrid[i][j].clusterID) {
                 clusterGrid[i][j].clusterID = ++clusterID;
 
-                if (debug) std::cout << "Starting cluster " << clusterID << " at (" << i << ", " << j << ")" << std::endl;
-
                 // Add point to stack
                 stack[stackIndex++] = clusterGrid[i][j];
-                if (debug) std::cout << "stackIndex: " << stackIndex << std::endl;
 
                 while (stackIndex > 0) {
                     // Pop point off stack
                     Point hit = stack[--stackIndex];
-                    if (debug) std::cout << "stackIndex: " << stackIndex << std::endl;
 
                     // Loop over all adjacent neighbors
                     for (int k = 0; k < 8; k++) {
                         int adj_i = hit.x + neighborXCoords[k];
                         int adj_j = hit.y + neighborYCoords[k];
-                        if (debug) std::cout << "Checking (" << adj_i << ", " << adj_j << ")" << std::endl;
 
                         // Mind the bounds
                         if (adj_i >= 0 && adj_i < NROWS && adj_j >= 0 && adj_j < NCOLS) {
@@ -184,8 +176,6 @@ std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROW
                             if (grid[adj_i][adj_j] && !clusterGrid[adj_i][adj_j].clusterID) {
                                 clusterGrid[adj_i][adj_j] = Point(adj_i, adj_j, clusterID);
                                 stack[stackIndex++] = clusterGrid[adj_i][adj_j];
-                                if (debug) std::cout << "Adding point (" << adj_i << ", " << adj_j << ") to cluster " << clusterID << std::endl;
-                                if (debug) std::cout << "stackIndex: " << stackIndex << std::endl;
                             }
                         }
                     }
@@ -266,11 +256,11 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
                 if (neighborID2) minClusterID = (minClusterID < neighborID2 ? minClusterID : neighborID2);
                 if (neighborID3) minClusterID = (minClusterID < neighborID3 ? minClusterID : neighborID3);   
 
-                clusterGrid1[i][j] = minClusterID;
-                clusterGrid1[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
-				clusterGrid1[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
-				clusterGrid1[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
-				clusterGrid1[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
+                clusterGrid2[i][j] = minClusterID;
+                clusterGrid2[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
+				clusterGrid2[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
+				clusterGrid2[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
+				clusterGrid2[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
             }
         }
     }
@@ -282,7 +272,7 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
         for (int j = 0; j < NCOLS + 2; j++) {
 #pragma HLS PIPELINE II=1
             if (grid[i][j]) {
-                short clusterID = clusterGrid1[i][j] ? clusterGrid1[i][j] : clusterGrid1[i][j];
+                short clusterID = clusterGrid2[i][j] ? clusterGrid2[i][j] : clusterGrid1[i][j];
                 pointsGrid[i][j] = Point(i, j, clusterID);
             } else {
                 pointsGrid[i][j] = Point(i, j, 0);

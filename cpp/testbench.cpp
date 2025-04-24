@@ -41,7 +41,20 @@ int main(int argc, char* argv[]) {
     // Generate grid
     std::vector<std::vector<int>> grid = generate(NROWS, NCOLS, nhitmax, nclustmax, debug);
 
-    // Convert grid to padded array
+    // Get clusters from original solution 
+    std::vector<Point> clusters = naive_findClusters(grid);
+
+    // Get clusters from baseline HLS solution
+    int gridArray[NROWS][NCOLS] = {};
+    for (int i = 0; i < NROWS; i++) {
+        for (int j = 0; j < NCOLS; j++) {
+            gridArray[i][j] = grid[i][j];
+        }
+    }
+
+    std::array<std::array<Point, NCOLS>, NROWS> clusters1 = naive_findClustersHLS1(gridArray);    
+
+    // Get clusters from optimized HLS solution
     bool paddedGrid[NROWS + 2][NCOLS + 2] = {};
     for (size_t i = 0; i < NROWS; ++i) {
         for (size_t j = 0; j < NCOLS; ++j) {
@@ -49,23 +62,36 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    // Get clusters
-    Point clusters2[NROWS + 2][NCOLS + 2];
+    Point clusters2[NROWS + 2][NCOLS + 2] = {};
     naive_findClustersHLS2(paddedGrid, clusters2);
 
-    // Flatten clusters2
+    // Flatten clusters1 and clusters2 to vectors
+    std::vector<Point> clusters1_flat;
+    for (int i = 0; i < NROWS; i++) {
+        for (int j = 0; j < NCOLS; j++) {
+            clusters1_flat.push_back(clusters1[i][j]);
+        }
+    }
+
     std::vector<Point> clusters2_flat;
-    for (size_t i = 0; i < NROWS + 2; ++i) {
-        for (size_t j = 0; j < NCOLS + 2; ++j) {
-            if (clusters2[i][j].clusterID != 0) {
-                clusters2_flat.push_back(clusters2[i][j]);
-            }
+    for (int i = 0; i < NROWS + 2; i++) {
+        for (int j = 0; j < NCOLS + 2; j++) {
+            clusters2_flat.push_back(clusters2[i][j]);
         }
     }
 
     // Print clusters
-    std::cout << "\n-----------------------------\n" << std::endl;
+    std::cout << "Clusters from original solution:" << std::endl;
+    printGridWithClusters(NROWS, NCOLS, clusters);
+    std::cout << std::endl;
+
+    std::cout << "Clusters from baseline HLS solution:" << std::endl;
+    printGridWithClusters(NROWS, NCOLS, clusters1_flat);
+    std::cout << std::endl;
+
+    std::cout << "Clusters from optimized HLS solution:" << std::endl;
     printGridWithClusters(NROWS + 2, NCOLS + 2, clusters2_flat);
+    std::cout << std::endl;
 
     return 0;
 }
