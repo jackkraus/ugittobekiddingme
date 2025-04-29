@@ -52,6 +52,14 @@ void gridToCSV(std::vector<std::vector<int>>& grid, int iteration) {
     }
 }
 
+void gridToCSV(short grid[NROWS + 2][NCOLS + 2], int iteration) {
+    for (int i = 0; i < NROWS + 2; ++i) {
+        for (int j = 0; j < NCOLS + 2; ++j) {
+            std::cout << iteration << "," << i << "," << j << "," << grid[i][j]<< "\n";
+        }
+    }
+}
+
 void printGridWithClusters(int nrows, int ncols, const std::vector<Point>& points) {
     std::vector<std::vector<int>> grid(nrows, std::vector<int>(ncols, 0));
 
@@ -209,7 +217,7 @@ std::array<std::array<Point, NCOLS>, NROWS> naive_findClustersHLS1(int grid[NROW
 // This allows us to skip bounds checking as long as we remain in [1, NROWS] and [1, NCOLS]
 // Anything in the padded area will be considered not-a-hit,
 // and so won't affect the cluster identification
-void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NROWS + 2][NCOLS + 2]) {
+void naive_findClustersHLS2(short grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NROWS + 2][NCOLS + 2]) {
     short maxClusterID = 1;
     short clusterGrid1[NROWS + 2][NCOLS + 2] = {0};
     short clusterGrid2[NROWS + 2][NCOLS + 2] = {0};
@@ -221,6 +229,7 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
 #pragma HLS ARRAY_PARTITION variable=lowerRightNeighborXCoords complete dim=1
 #pragma HLS ARRAY_PARTITION variable=lowerRightNeighborYCoords complete dim=1
 
+int iteration = 0;
 
     // First pass: assign initial cluster IDs based on neighbors above and left
     FirstPass:
@@ -243,6 +252,8 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
                 if (minClusterID == maxClusterID) maxClusterID++;
 
                 clusterGrid1[i][j] = minClusterID;
+                grid[i][j] = minClusterID;
+                gridToCSV(grid, iteration++);
             }
         }
     }
@@ -267,10 +278,33 @@ void naive_findClustersHLS2(bool grid[NROWS + 2][NCOLS + 2], Point pointsGrid[NR
                 if (neighborID3) minClusterID = (minClusterID < neighborID3 ? minClusterID : neighborID3);   
 
                 clusterGrid2[i][j] = minClusterID;
+                grid[i][j] = minClusterID;
+                gridToCSV(grid, iteration++);
+
                 clusterGrid2[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
+                if (grid[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]]) {
+                    grid[i + lowerRightNeighborXCoords[0]][j + lowerRightNeighborYCoords[0]] = minClusterID;
+                }
+                gridToCSV(grid, iteration++);
+
 				clusterGrid2[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
+                if (grid[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]]) {
+                    grid[i + lowerRightNeighborXCoords[1]][j + lowerRightNeighborYCoords[1]] = minClusterID;
+                }
+                gridToCSV(grid, iteration++);
+
 				clusterGrid2[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
+                if (grid[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]]) {
+                    grid[i + lowerRightNeighborXCoords[2]][j + lowerRightNeighborYCoords[2]] = minClusterID;
+                }
+                gridToCSV(grid, iteration++);
+
 				clusterGrid2[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
+                if (grid[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]]) {
+                    grid[i + lowerRightNeighborXCoords[3]][j + lowerRightNeighborYCoords[3]] = minClusterID;
+                }
+                gridToCSV(grid, iteration++);
+
             }
         }
     }
@@ -329,28 +363,28 @@ int main(int argc, char* argv[]) {
     
 
     // Get clusters from original solution 
-    std::vector<Point> clusters = naive_findClusters(grid);
+    // std::vector<Point> clusters = naive_findClusters(grid);
 
     // Get clusters from baseline HLS solution
-    int gridArray[NROWS][NCOLS] = {};
-    for (int i = 0; i < NROWS; i++) {
-        for (int j = 0; j < NCOLS; j++) {
-            gridArray[i][j] = grid[i][j];
-        }
-    }
+    // int gridArray[NROWS][NCOLS] = {};
+    // for (int i = 0; i < NROWS; i++) {
+    //     for (int j = 0; j < NCOLS; j++) {
+    //         gridArray[i][j] = grid[i][j];
+    //     }
+    // }
 
     // std::array<std::array<Point, NCOLS>, NROWS> clusters1 = naive_findClustersHLS1(gridArray);    
 
     // Get clusters from optimized HLS solution
-    // bool paddedGrid[NROWS + 2][NCOLS + 2] = {};
-    // for (size_t i = 0; i < NROWS; ++i) {
-    //     for (size_t j = 0; j < NCOLS; ++j) {
-    //         paddedGrid[i + 1][j + 1] = grid[i][j] ? true : false;
-    //     }
-    // }
+    short paddedGrid[NROWS + 2][NCOLS + 2] = {};
+    for (size_t i = 0; i < NROWS; ++i) {
+        for (size_t j = 0; j < NCOLS; ++j) {
+            paddedGrid[i + 1][j + 1] = grid[i][j] ? true : false;
+        }
+    }
 
     Point clusters2[NROWS + 2][NCOLS + 2] = {};
-    // naive_findClustersHLS2(paddedGrid, clusters2);
+    naive_findClustersHLS2(paddedGrid, clusters2);
 
     // Flatten clusters1 and clusters2 to vectors
     // std::vector<Point> clusters1_flat;
